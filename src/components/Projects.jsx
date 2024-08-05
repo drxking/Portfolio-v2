@@ -4,6 +4,7 @@ import React, { useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import project from "../assets/project.js";
+import Toggle from "./Toggle.jsx";
 
 const Projects = () => {
   let [clicks, setClicks] = useState(false);

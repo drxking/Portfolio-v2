@@ -1,25 +1,19 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Respo from "./components/Respo";
-import Skills from "./components/Skills";
-import { useState } from "react";
-import Projects from "./components/Projects";
+import React, { lazy, Suspense } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-const App = () => {
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
-  const handleImageLoad = () => {
-    setIsImageLoaded(true);
-  };
+const Home = lazy(() => import('./pages/Home'));
+
+function App() {
   return (
-    <div className="lg:px-20 md:px-10 px-4 text-[--text-color] duration-300 overflow-x-hidden">
-      <Respo  />
-      <Navbar />
-      <Hero onImageLoad={handleImageLoad} />
-      {isImageLoaded && <Skills />}
-      {isImageLoaded && <Projects  />}
-      
-    </div>
+    <Router>
+        
+        <Suspense fallback={<div className='flex items-center justify-center text-3xl h-screen'>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </Suspense>
+    </Router>
   );
-};
+}
 
 export default App;
