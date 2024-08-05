@@ -1,7 +1,8 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React, { useEffect, useRef, useState } from "react";
-gsap.registerPlugin();
+import React, { useRef, useState } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 import project from "../assets/project.js";
 
 const Projects = () => {
@@ -13,6 +14,24 @@ const Projects = () => {
   const deskImageRef = useRef(null);
   const dateRef = useRef(null);
   const techRef = useRef(null);
+  const projects = useRef(null);
+  useGSAP(() => {
+    let tt = projects.current.querySelectorAll(".card");
+    tt.forEach((xx) => {
+      gsap.from(xx, {
+        opacity: 0,
+        duration: 0.4,
+        rotateX:-15,
+        scale:0.7,
+        y:`100%`,
+        scrollTrigger: {
+          trigger: xx,
+          start: "top 90%",
+          markers:true
+        },
+      });
+    });
+  }, []);
   useGSAP(() => {
     if (clicks) {
       gsap.to(popup.current, {
@@ -48,9 +67,14 @@ const Projects = () => {
   }
 
   return (
-    <div className="flex flex-col items-center mb-32">
+    <div
+      id="projects"
+      ref={projects}
+      className="flex flex-col items-center mb-32"
+    >
       <h1 className="text-3xl font-semibold w-full md:w-fit">Projects</h1>
-      <div className="mt-14 flex lg:gap-4 gap-20 flex-wrap justify-center">
+      
+      <div  className="perter mt-14 flex lg:gap-4 gap-20 flex-wrap justify-center">
         {project.map((one) => (
           <div
             onClick={() => {
@@ -65,13 +89,14 @@ const Projects = () => {
               });
             }}
             key={one.site_url}
+            style={{transform:`rotateX(0)`}}
             className="group card w-full  md:w-96 cursor-pointer"
           >
             <div className="image-wrapper overflow-hidden shadow-lg">
               <img
                 src={one.desk_image}
                 className="hover:scale-110 duration-500"
-                alt=""
+                alt="deskimage"
               />
             </div>
             <div className="dets flex justify-between p-2">

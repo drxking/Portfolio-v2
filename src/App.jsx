@@ -11,7 +11,7 @@ const App = () => {
     setIsImageLoaded(true);
   };
   return (
-    <div className="lg:px-20 md:px-10 px-4 text-[--text-color] duration-300">
+    <div className="lg:px-20 md:px-10 px-4 text-[--text-color] duration-300 overflow-x-hidden">
       <Respo  />
       <Navbar />
       <Hero onImageLoad={handleImageLoad} />

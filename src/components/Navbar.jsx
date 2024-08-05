@@ -30,7 +30,7 @@ const Navbar = () => {
 
   const links = {
     Skills: "#skills",
-    Projects: "#",
+    Projects: "#projects",
   };
   const linkArr = Object.entries(links);
 

@@ -7,6 +7,19 @@ import gsap from "gsap";
 const Respo = () => {
   let [swiped, setswiped] = useState(0);
   let widtht = window.innerWidth;
+  const linkArr = Object.entries({
+    Skills: "#skills",
+    Projects: "#projects",
+    "About me": "#",
+    Contact: "#",
+  });
+  const icons = [
+    "ri-nodejs-line",
+    "ri-settings-4-line",
+    "ri-account-circle-line",
+    "ri-contacts-book-line",
+  ];
+
   useEffect(() => {
     if (widtht < 768) {
       let start = 0;
@@ -59,18 +72,6 @@ const Respo = () => {
   function handleLinkClick() {
     setswiped(false);
   }
-  const linkArr = Object.entries({
-    Skills: "#skills",
-    Projects: "#",
-    "About me": "#",
-    Contact: "#",
-  });
-  const icons = [
-    "ri-nodejs-line",
-    "ri-settings-4-line",
-    "ri-account-circle-line",
-    "ri-contacts-book-line",
-  ];
 
   return (
     <div className="respo h-screen w-screen bg-[--primary-alpha-color] box-border backdrop-blur-2xl  fixed top-0 right-[-100vw] duration-300 z-10 p-8 flex flex-col  items-start ">
@@ -95,7 +96,7 @@ const Respo = () => {
         ))}
       </ul>
       <div className="absolute bottom-10">
-      <Links />
+        <Links />
       </div>
     </div>
   );

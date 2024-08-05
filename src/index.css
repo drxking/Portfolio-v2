@@ -45,3 +45,7 @@ body {
   background-color: var(--primary-color);
   overflow-x: hidden;
 }
+
+.perter{
+  perspective: 100px;
+}
