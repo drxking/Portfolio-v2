@@ -85,7 +85,7 @@ const Projects = () => {
         ref={popup}
         className=" flex justify-center items-start projects-popup w-full h-screen  overflow-y-scroll fixed top-[100%]"
       >
-        <div className="flex flex-col items-center rounded-t-[35px] md:rounded-t-[50px]  bg-[--primary-alpha-color] backdrop-brightness-[35%] border-t border-gray-500/50 backdrop-blur-[25px] py-7 px-4 md:p-7 mt-20 ">
+        <div className="flex flex-col items-center rounded-t-[35px] md:rounded-t-[50px]  bg-[--primary-alpha-color] backdrop-brightness-[35%] border-t border-gray-600/50 backdrop-blur-[25px] py-7 px-4 md:p-7 mt-20 ">
           <div className="w-full md:w-[80%] flex justify-between mt-5  md:mt-10">
             <div className=" mb-4 ">
               <h1
@@ -110,10 +110,10 @@ const Projects = () => {
               </a>
             </div>
             <button
-              className="group/hello flex items-center leading-none h-fit  text-white"
+              className="group/hello  flex items-center leading-none h-fit  text-white"
               onClick={handleCloseOnClick}
             >
-              <span className="overflow-hidden inline-block translate-x-4 pr-2"><span className=" inline-block group-hover/hello:translate-x-0 translate-x-14  duration-300 ">Close</span></span><i className=" inline-block duration-200 text-[40px]  ri-close-fill group-hover/hello:rotate-90  leading-[0.7]"></i>
+              <span className="overflow-hidden inline-block translate-x-4 pr-2"><span className=" inline-block group-hover/hello:translate-x-0 translate-x-14  duration-300 ">Close</span></span><i className=" inline-block duration-200 text-[40px]  ri-close-fill group-hover/hello:rotate-90  leading-none"></i>
             </button>
           </div>
           <div className="bottom w-full flex flex-col items-center">

@@ -72,7 +72,7 @@ const ProjectCards = ({ handleOnClick, one, onLoad }) => {
             <i className="group-hover:-rotate-45 inline-block duration-200 text-lg   ri-arrow-right-up-line"></i>
           </button>
         </div>
-        <div className="desc line-clamp-2 text-xs px-2 opacity-75 tracking-wider font-extralight ">
+        <div className="desc line-clamp-2 text-xs px-2 opacity-65 tracking-wide">
           {one.desc}
         </div>
       </div>
