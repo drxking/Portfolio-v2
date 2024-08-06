@@ -15,7 +15,6 @@ const ProjectCards = ({ handleOnClick, one, onLoad }) => {
 
   const handleImageLoad = () => {
     setLoaded(true);
-    console.log("loaded")
   };
   const card = useRef(null);
 
@@ -28,7 +27,7 @@ const ProjectCards = ({ handleOnClick, one, onLoad }) => {
       duration: 0.7,
       scale: 0.7,
       ease: "power2",
-      opacity: 0,
+      //   opacity: 0,
       scrollTrigger: {
         trigger: card.current,
         start: "bottom 120%",

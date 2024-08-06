@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { DarkMode, LightMode } from "../utils/mode";
 
 function btnDarkMode(mode, btn, cloud, star) {
   let widthOfParent = mode.current.getBoundingClientRect().width;
@@ -25,28 +26,32 @@ function btnLightMode(mode, btn, cloud, star) {
   btn.current.innerHTML = `<i class="ri-moon-clear-fill text-xs"></i>`;
 }
 
-const Toggle = ({ isDarkMode, theme }) => {
-  const [turn, setTurn] = useState(theme);
+const Toggle = () => {
+  const [turn, setTurn] = useState(false);
   const mode = useRef(null);
   const btn = useRef(null);
   const cloud = useRef(null);
   const star = useRef(null);
   function turnOn() {
     btnDarkMode(mode, btn, cloud, star);
-    isDarkMode(true);
+    DarkMode();
   }
 
   function turnOff() {
     btnLightMode(mode, btn, cloud, star);
-    isDarkMode(false);
+    LightMode();
   }
 
   useEffect(() => {
-    if (turn) {
+    if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+      turnOff();
+      setTurn(false);
+    } else {
       turnOn();
       setTurn(true);
     }
-  }, [turn]);
+  }, []);
+
   const HandleOnClick = () => {
     if (!turn) {
       turnOn();

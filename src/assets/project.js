@@ -145,6 +145,44 @@ This clone project serves as a testament to the capabilities of modern web devel
         date: "Mid-year 2023",
         tech:["HTML","Tailwind CSS","JavaScript"]
     },
+    {
+        title: "WandersGate",
+        desc: `
+Apple Clone Website is a meticulously crafted web project that emulates the iconic minimalist design of Apple's official website. This clone project showcases a clean, elegant, and user-friendly interface, capturing the essence of Apple's renowned design philosophy.
+
+ Key Features:
+
+- Minimalist Layout: The website is designed with a focus on simplicity and clarity, featuring clean lines, ample white space, and a streamlined navigation structure. This minimalist approach ensures a visually appealing and intuitive user experience, reminiscent of Apple's signature style.
+
+- Responsive Design: Built with responsiveness in mind, the website adapts seamlessly to various devices and screen sizes, from desktops to mobile phones. This ensures a consistent and optimal viewing experience for all users.
+
+- Tailwind CSS Integration: Tailwind CSS is utilized to style the website, providing a utility-first CSS framework that enables rapid and efficient development. The use of Tailwind CSS ensures a consistent and modern look throughout the site, with responsive design utilities for flexible layouts.
+
+- JavaScript Functionality: JavaScript is employed to enhance interactivity and user experience. This includes smooth scrolling, dynamic content updates, and interactive elements that make the website engaging and functional.
+
+- High-Quality Visuals: The website features high-resolution images and graphics, ensuring that all visual elements are crisp and clear. This attention to detail replicates the premium feel of Apple's official website.
+
+- Clean and Efficient Code: The HTML, Tailwind CSS, and JavaScript code are written with best practices in mind, ensuring clean, maintainable, and efficient code. This not only improves performance but also makes the codebase easy to understand and modify.
+
+ Technologies Used:
+
+- HTML5: For the semantic structure of the web pages.
+- Tailwind CSS: For styling and layout, providing a modern, utility-first CSS framework.
+- JavaScript: For adding interactivity and dynamic content to the website.
+- Responsive Design Techniques: Ensuring the website looks great on all devices.
+- High-Resolution Graphics: For a premium visual experience.
+
+ Project Goals:
+
+The primary goal of the Apple Clone Website is to replicate the minimalist and sophisticated design of Apple's official site while ensuring a high level of functionality and user engagement. By leveraging modern web technologies such as HTML, Tailwind CSS, and JavaScript, the project aims to deliver a smooth and visually stunning user experience.
+
+This clone project serves as a testament to the capabilities of modern web development tools and techniques, showcasing how a clean and minimalist design can be achieved without sacrificing functionality or user experience. The Apple Clone Website stands as a high-quality example of web design and development excellence.`,
+        desk_image: "/projects/wanderGates-desktop.png",
+        mob_image: "/projects/fintory-mobile.jpg",
+        site_url: "#",
+        date: "Mid-year 2023",
+        tech:["HTML","Tailwind CSS","JavaScript","GSAP","Locomotive"]
+    },
 ]
 
 export default project;
