@@ -29,7 +29,7 @@ Khaatabook aims to provide an intuitive and efficient platform for note-taking a
         mob_image: "/projects/khaatabook-mobile.jpg",
         site_url: "https://khaatabook-nine.vercel.app/",
         date: "2023-2024",
-        tech:["NodeJs","ExpressJs","MongooseJs","MongoDb","Ejs","TailwindCss"]
+        tech: ["NodeJs", "ExpressJs", "MongooseJs", "MongoDb", "Ejs", "TailwindCss"]
     },
     {
         title: "Multiverse",
@@ -67,7 +67,7 @@ With its smooth scrolling, seamless animations, and cutting-edge design, Multive
         mob_image: "/projects/multiverse-mobile.jpg",
         site_url: "https://drxking.github.io/Multiverse/dist/",
         date: "2023-present",
-        tech:["HTML","Css","JavaScript","LocomotiveJs","GSAP"]
+        tech: ["HTML", "Css", "JavaScript", "LocomotiveJs", "GSAP"]
     },
     {
         title: "Fintory",
@@ -105,7 +105,7 @@ With its minimalist layout, smooth scrolling, and engaging animations, Fintory r
         mob_image: "/projects/fintory-mobile.jpg",
         site_url: "https://drxking.github.io/Fintory/",
         date: "2022-2023",
-        tech:["HTML","Css","JavaScript","LocomotiveJs","GSAP"]
+        tech: ["HTML", "Css", "JavaScript", "LocomotiveJs", "GSAP"]
     },
     {
         title: "Apple",
@@ -143,45 +143,56 @@ This clone project serves as a testament to the capabilities of modern web devel
         mob_image: "/projects/fintory-mobile.jpg",
         site_url: "#",
         date: "Mid-year 2023",
-        tech:["HTML","Tailwind CSS","JavaScript"]
+        tech: ["HTML", "Tailwind CSS", "JavaScript"]
     },
     {
         title: "WandersGate",
         desc: `
-Apple Clone Website is a meticulously crafted web project that emulates the iconic minimalist design of Apple's official website. This clone project showcases a clean, elegant, and user-friendly interface, capturing the essence of Apple's renowned design philosophy.
 
- Key Features:
+Key Features:
 
-- Minimalist Layout: The website is designed with a focus on simplicity and clarity, featuring clean lines, ample white space, and a streamlined navigation structure. This minimalist approach ensures a visually appealing and intuitive user experience, reminiscent of Apple's signature style.
+- Seamless Scrolling:
+    Utilizing LocoMotive.js, the website offers smooth and fluid scrolling effects. This enhances the browsing experience, making it more immersive and enjoyable for users.
 
-- Responsive Design: Built with responsiveness in mind, the website adapts seamlessly to various devices and screen sizes, from desktops to mobile phones. This ensures a consistent and optimal viewing experience for all users.
+- Advanced Animations:
+    GSAP is employed to create intricate animations, including scroll-triggered animations, mouse movement effects, and other interactive elements. These animations add a dynamic and modern touch to the website, making it visually captivating.
 
-- Tailwind CSS Integration: Tailwind CSS is utilized to style the website, providing a utility-first CSS framework that enables rapid and efficient development. The use of Tailwind CSS ensures a consistent and modern look throughout the site, with responsive design utilities for flexible layouts.
+- Interactive Elements:
+    JavaScript is used to add interactivity to various elements of the website. This includes hover effects, clickable components, and other user-triggered actions that make the site more engaging.
 
-- JavaScript Functionality: JavaScript is employed to enhance interactivity and user experience. This includes smooth scrolling, dynamic content updates, and interactive elements that make the website engaging and functional.
+- Modern Aesthetics:
+    The design is minimalist and clean, with a focus on visual storytelling. The use of Tailwind CSS ensures that the design is both stylish and functional, with a cohesive color scheme and typography.
 
-- High-Quality Visuals: The website features high-resolution images and graphics, ensuring that all visual elements are crisp and clear. This attention to detail replicates the premium feel of Apple's official website.
+Technologies Used:
 
-- Clean and Efficient Code: The HTML, Tailwind CSS, and JavaScript code are written with best practices in mind, ensuring clean, maintainable, and efficient code. This not only improves performance but also makes the codebase easy to understand and modify.
+- HTML: Structuring the content and layout of the website.
+- Tailwind CSS: Styling the website with a utility-first approach for responsive design and ease of customization.
+- JavaScript: Adding interactivity and dynamic elements.
+- GSAP (GreenSock Animation Platform): Creating smooth and intricate animations.
+- LocoMotive.js: Implementing seamless scrolling effects and enhancing user experience through advanced scroll animations.
 
- Technologies Used:
 
-- HTML5: For the semantic structure of the web pages.
-- Tailwind CSS: For styling and layout, providing a modern, utility-first CSS framework.
-- JavaScript: For adding interactivity and dynamic content to the website.
-- Responsive Design Techniques: Ensuring the website looks great on all devices.
-- High-Resolution Graphics: For a premium visual experience.
+Implementation Details:
 
- Project Goals:
+- HTML Structure: The HTML markup is organized and semantic, providing a solid foundation for the website. Each section of the website is well-defined, making it easy to navigate and understand the content.
 
-The primary goal of the Apple Clone Website is to replicate the minimalist and sophisticated design of Apple's official site while ensuring a high level of functionality and user engagement. By leveraging modern web technologies such as HTML, Tailwind CSS, and JavaScript, the project aims to deliver a smooth and visually stunning user experience.
+- Tailwind CSS Styling: Tailwind CSS is used extensively for styling, with utility classes that streamline the design process. This approach allows for rapid development and easy customization, ensuring the website looks polished and professional.
 
-This clone project serves as a testament to the capabilities of modern web development tools and techniques, showcasing how a clean and minimalist design can be achieved without sacrificing functionality or user experience. The Apple Clone Website stands as a high-quality example of web design and development excellence.`,
+- JavaScript Interactivity: Custom JavaScript code is written to handle various interactive elements and animations. This includes event listeners for mouse movements, scroll events, and other user interactions.
+
+- GSAP Animations:  GSAP is utilized to create a wide range of animations, from subtle transitions to more complex sequences. The animations are smooth and performant, enhancing the overall user experience.
+
+- LocoMotive.js Scrolling: LocoMotive.js is integrated to provide smooth scrolling effects. This library helps in creating a fluid and natural scrolling experience, which is particularly important for a website with heavy animation and interactive elements.
+
+  Project Overview:
+  
+The WandersGates Clone is a meticulously crafted website that showcases a blend of modern web design and interactive animations. This project leverages a combination of Tailwind CSS, HTML, JavaScript, GSAP, and LocoMotive.js to deliver an engaging and visually appealing user experience. The primary focus is on seamless animations and smooth scrolling effects, enhancing the overall aesthetic and functionality of the website.
+`,
         desk_image: "/projects/wanderGates-desktop.png",
         mob_image: "/projects/fintory-mobile.jpg",
         site_url: "#",
-        date: "Mid-year 2023",
-        tech:["HTML","Tailwind CSS","JavaScript","GSAP","Locomotive"]
+        date: "jun 2024",
+        tech: ["HTML", "Tailwind CSS", "JavaScript", "GSAP", "Locomotive"]
     },
 ]
 
