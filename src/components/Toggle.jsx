@@ -1,57 +1,52 @@
 import { useEffect, useRef, useState } from "react";
 
-const Toggle = () => {
+function btnDarkMode(mode, btn, cloud, star) {
+  let widthOfParent = mode.current.getBoundingClientRect().width;
+  btn.current.style.left = `${widthOfParent / 2}px`;
+  btn.current.style.marginLeft = `0px`;
+  btn.current.style.marginRight = `4px`;
+  mode.current.style.backgroundColor = `#666`;
+  btn.current.style.backgroundColor = `#e5e5e5`;
+  cloud.current.style.bottom = `0%`;
+  star.current.style.bottom = `100%`;
+  btn.current.style.color = `#777`;
+  btn.current.innerHTML = `<i class="ri-sun-fill text-xs"></i>`;
+}
+
+function btnLightMode(mode, btn, cloud, star) {
+  btn.current.style.left = `0px`;
+  btn.current.style.marginRight = `0px`;
+  btn.current.style.marginLeft = `4px`;
+  mode.current.style.backgroundColor = `#fff`;
+  btn.current.style.backgroundColor = `#374151`;
+  cloud.current.style.bottom = `-100%`;
+  star.current.style.bottom = `0%`;
+  btn.current.style.color = `#e5e5e5`;
+  btn.current.innerHTML = `<i class="ri-moon-clear-fill text-xs"></i>`;
+}
+
+const Toggle = ({ isDarkMode, theme }) => {
+  const [turn, setTurn] = useState(theme);
   const mode = useRef(null);
   const btn = useRef(null);
   const cloud = useRef(null);
   const star = useRef(null);
   function turnOn() {
-    let widthOfParent = mode.current.getBoundingClientRect().width;
-    btn.current.style.left = `${widthOfParent / 2}px`;
-    btn.current.style.marginLeft = `0px`;
-    btn.current.style.marginRight = `4px`;
-    mode.current.style.backgroundColor = `#666`;
-    btn.current.style.backgroundColor = `#e5e5e5`;
-    cloud.current.style.bottom = `0%`;
-    star.current.style.bottom = `100%`;
-    btn.current.style.color = `#777`;
-    btn.current.innerHTML = `<i class="ri-sun-fill text-xs"></i>`;
-    document.documentElement.style.setProperty("--primary-color", "#222");
-    document.documentElement.style.setProperty("--text-color", "#e5e5e5");
-    document.documentElement.style.setProperty("--solid-color", "#666");
-    document.documentElement.style.setProperty(
-      "--primary-alpha-color",
-      "#1d1d1d66"
-    );
+    btnDarkMode(mode, btn, cloud, star);
+    isDarkMode(true);
   }
 
   function turnOff() {
-    btn.current.style.left = `0px`;
-    btn.current.style.marginRight = `0px`;
-    btn.current.style.marginLeft = `4px`;
-    mode.current.style.backgroundColor = `#fff`;
-    btn.current.style.backgroundColor = `#374151`;
-    cloud.current.style.bottom = `-100%`;
-    star.current.style.bottom = `0%`;
-    btn.current.style.color = `#e5e5e5`;
-    btn.current.innerHTML = `<i class="ri-moon-clear-fill text-xs"></i>`;
-    document.documentElement.style.setProperty("--primary-color", "#e5e5e5");
-    document.documentElement.style.setProperty("--text-color", "#000");
-    document.documentElement.style.setProperty("--solid-color", "#fff");
-    document.documentElement.style.setProperty(
-      "--primary-alpha-color",
-      "#d0d0d042"
-    );
+    btnLightMode(mode, btn, cloud, star);
+    isDarkMode(false);
   }
 
-  const [turn, setTurn] = useState(false);
-
   useEffect(() => {
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    if (turn) {
       turnOn();
       setTurn(true);
     }
-  }, []);
+  }, [turn]);
   const HandleOnClick = () => {
     if (!turn) {
       turnOn();

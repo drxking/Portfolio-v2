@@ -35,29 +35,33 @@ const Skills = () => {
       gsap.from(yy, {
         opacity: 0,
         y: `70%`,
-        scaleX: 0.7,
+        scale: 0.7,
         rotateX: -90,
-        duration:0.4,
+        duration: 0.4,
         scrollTrigger: {
           trigger: yy,
-          start: "bottom bottom",
+          start: "top bottom",
+          end: "top 80%",
         },
       });
     });
   }, []);
 
   return (
-    <div id="skills" className="mb-32 flex flex-col items-center mt-20">
+    <div
+      ref={refff}
+      id="skills"
+      className="mb-32 flex flex-col items-center pt-16 mt-2"
+    >
       <h1 className="text-3xl font-semibold mb-10 ">Skills</h1>
-      <ul
-        ref={refff}
-        className="flex flex-1 gap-8 flex-wrap justify-center"
-      >
+      <ul className="flex  flex-1 gap-8 flex-wrap justify-center">
         {skill.map(([icons, desc]) => (
-          <li key={desc} className="ind w-52 flex flex-col items-center gap-6 origin-top">
-            <i className={`${icons} text-[80px] leading-none h-24`}></i>
-            <p className="text-center text-sm ">{desc}</p>
-          </li>
+          <div key={desc} style={{ perspective: "300px" }}>
+            <li className="ind w-52 flex flex-col items-center gap-6 origin-top ">
+              <i className={`${icons} text-[80px] leading-none h-24`}></i>
+              <p className="text-center text-sm ">{desc}</p>
+            </li>
+          </div>
         ))}
       </ul>
     </div>

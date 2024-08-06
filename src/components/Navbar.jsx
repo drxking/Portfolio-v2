@@ -3,7 +3,7 @@ import Logo from "./H1logo";
 import Toggle from "./Toggle";
 import gsap from "gsap";
 import { useState } from "react";
-const Navbar = () => {
+const Navbar = ({isDarkMode,theme}) => {
   const [clicked, setClicked] = useState(false);
   useGSAP(() => {
     if (clicked) {
@@ -65,7 +65,7 @@ const Navbar = () => {
             </i>
           </button>
         </div>
-        <Toggle />
+        <Toggle isDarkMode={isDarkMode} theme={theme}/>
       </div>
     </div>
   );

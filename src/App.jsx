@@ -7,7 +7,7 @@ function App() {
   return (
     <Router>
         
-        <Suspense fallback={<div className='flex items-center justify-center text-3xl h-screen'>Loading...</div>}>
+        <Suspense fallback={<div className='flex items-center bg-[#222] text-white justify-center text-3xl h-screen'>Loading...</div>}>
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>

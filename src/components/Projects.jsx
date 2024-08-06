@@ -4,10 +4,15 @@ import React, { useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import project from "../assets/project.js";
-import Toggle from "./Toggle.jsx";
+import ProjectCards from "./ProjectCards.jsx";
 
 const Projects = () => {
   let [clicks, setClicks] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleImageLoad = () => {
+    setCurrentIndex((prevIndex) => prevIndex + 1);
+  };
   const popup = useRef(null);
   const titleRef = useRef(null);
   const descRef = useRef(null);
@@ -16,7 +21,6 @@ const Projects = () => {
   const dateRef = useRef(null);
   const techRef = useRef(null);
   const projects = useRef(null);
-
 
   useGSAP(() => {
     if (clicks) {
@@ -44,7 +48,15 @@ const Projects = () => {
     descRef.current.innerHTML = desc.split("\n").join("<br />");
     dateRef.current.innerHTML = date;
     techRef.current.innerHTML = clutter;
-    siteUrlRef.current.href = url;
+    console.log(url);
+    if (url == "#") {
+      siteUrlRef.current.href = url;
+      siteUrlRef.current.removeAttribute("href");
+      siteUrlRef.current.innerHTML = `Not Hosted Yet <i class="group-hover:rotate-90 inline-block duration-200 text-xl  ri-close-fill"></i>`;
+    } else {
+      siteUrlRef.current.href = url;
+      siteUrlRef.current.innerHTML = `Visit Site <i class="group-hover:rotate-45 inline-block duration-200 text-xl   ri-arrow-right-up-line"></i>`;
+    }
     setClicks(true);
   }
   function handleCloseOnClick() {
@@ -53,49 +65,20 @@ const Projects = () => {
   }
 
   return (
-    <div
-      id="projects"
-      ref={projects}
-      className="flex flex-col items-center mb-32"
-    >
+    <div id="projects" className="flex flex-col items-center mb-32">
       <h1 className="text-3xl font-semibold w-full md:w-fit">Projects</h1>
 
-      <div className=" mt-14 flex lg:gap-4 gap-20 flex-wrap justify-center">
-        {project.map((one) => (
-          <div
-            onClick={() => {
-              handleOnClick({
-                url: one.site_url,
-                title: one.title,
-                desc: one.desc,
-                desk_image: one.desk_image,
-                mob_image: one.mob_image,
-                date: one.date,
-                tech: one.tech,
-              });
-            }}
-            key={one.site_url}
-            style={{ transform: `rotateX(0)` }}
-            className="group card w-full  md:w-96 cursor-pointer"
-          >
-            <div className="image-wrapper overflow-hidden shadow-lg">
-              <img
-                src={one.desk_image}
-                className="hover:scale-110 duration-500"
-                alt="deskimage"
-              />
-            </div>
-            <div className="dets flex justify-between p-2">
-              <h1 className="text-md font-light w-fit">{one.title}</h1>
-              <button className="text-md font-light flex items-center ">
-                Details
-                <i className="group-hover:rotate-45 inline-block duration-200 text-lg   ri-arrow-right-up-line"></i>
-              </button>
-            </div>
-            <div className="desc line-clamp-2 text-xs px-2 opacity-75 tracking-wider font-extralight ">
-              {one.desc}
-            </div>
-          </div>
+      <div
+        ref={projects}
+        className=" mt-14 flex md:gap-x-4 md:gap-y-14 gap-20 flex-wrap justify-center"
+      >
+        {project.slice(0, currentIndex + 1).map((one, index) => (
+          <ProjectCards
+            key={one.title}
+            one={one}
+            handleOnClick={handleOnClick}
+            onLoad={handleImageLoad}
+          />
         ))}
       </div>
       <div
@@ -107,7 +90,7 @@ const Projects = () => {
             <div className=" mb-4 ">
               <h1
                 ref={titleRef}
-                className="md:text-[50px] text-[40px] leading-none font-medium text-white "
+                className="md:text-[50px] text-[40px] leading-tight font-medium text-white "
               ></h1>
               <p
                 ref={dateRef}
@@ -120,17 +103,17 @@ const Projects = () => {
               <a
                 ref={siteUrlRef}
                 target="_blank"
-                className="px-4 py-1 group bg-purple-500 text-white text-sm rounded-full flex items-center w-fit"
+                className="px-4 py-1 group bg-purple-500 text-white text-sm rounded-full flex items-center w-fit cursor-pointer"
               >
                 Visit Site
-                <i className="group-hover:rotate-45 inline-block duration-200 text-xl   ri-arrow-right-up-line"></i>{" "}
+                <i className="group-hover:rotate-45 inline-block duration-200 text-xl   ri-arrow-right-up-line"></i>
               </a>
             </div>
             <button
-              className=" leading-none h-fit py-4  underline text-white"
+              className="group/hello flex items-center leading-none h-fit  text-white"
               onClick={handleCloseOnClick}
             >
-              Close
+              <span className="overflow-hidden inline-block translate-x-4 pr-2"><span className=" inline-block group-hover/hello:translate-x-0 translate-x-14  duration-300 ">Close</span></span><i className=" inline-block duration-200 text-[40px]  ri-close-fill group-hover/hello:rotate-90  leading-[0.7]"></i>
             </button>
           </div>
           <div className="bottom w-full flex flex-col items-center">
