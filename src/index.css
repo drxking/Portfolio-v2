@@ -23,16 +23,20 @@ html{
   scroll-behavior: smooth;
 }
 html::-webkit-scrollbar{
-  display: none;
+  /* display: none; */
   width: 8px;
 }
 html::-webkit-scrollbar-button{
   display: none;
 }
 html::-webkit-scrollbar-thumb{
-  background:var(--text-color);
+  background:rgba(0, 0, 0, 0.329);
   border-radius: 20px;
-  cursor: grab;
+
+}
+html::-webkit-scrollbar-thumb:hover{
+  background:rgba(0, 0, 0, 0.700);
+
 }
 
 html::-webkit-scrollbar-track{

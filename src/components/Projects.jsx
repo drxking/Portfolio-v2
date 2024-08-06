@@ -72,7 +72,7 @@ const Projects = () => {
         ref={projects}
         className=" mt-14 flex md:gap-x-4 md:gap-y-14 gap-20 flex-wrap justify-center"
       >
-        {project.slice(0, currentIndex + 1).map((one, index) => (
+        {project.slice(0, currentIndex + 1).map((one) => (
           <ProjectCards
             key={one.title}
             one={one}
@@ -120,8 +120,8 @@ const Projects = () => {
             <img
               ref={deskImageRef}
               src="/projects/fintory-desktop.png"
-              className="w-[100%] md:w-[80%]"
-              alt="hello"
+              className="w-[100%] md:w-[80%] "
+              alt="desktopImage"
             />
             <p
               ref={descRef}

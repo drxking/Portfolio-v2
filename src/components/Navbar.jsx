@@ -48,6 +48,7 @@ const Navbar = () => {
       </div>
 
       <div className="right items-center gap-4 flex">
+
         <h2 className="text-sm font-medium hidden md:flex">Let's Connect</h2>
         <div className=" px-1 pl-5 py-1 rounded-full bg-[--solid-color] hidden md:flex">
           <input

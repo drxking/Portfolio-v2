@@ -4,7 +4,7 @@ import gsap from "gsap";
 const H1 = ({ cont, c }) => {
   return (
     <div style={{ perspective: "100px" }} className="h1-wrapper px-2">
-      <h1 className="h1-s text-[18vw] md:text-[10vw] lg:text-[8vw] origin-top  text-center font-['oswald'] uppercase tracking-tighter font-[500] leading-none w-fit ">
+      <h1 className="pointer-events-none h1-s text-[18vw] md:text-[10vw] lg:text-[8vw] origin-top  text-center font-['oswald'] uppercase tracking-tighter font-[500] leading-none w-fit ">
         {cont}
         {c ? <span className="font-bold ">©</span> : ""}
       </h1>
@@ -70,7 +70,7 @@ const Hero = ({ onImageLoad }) => {
       rotateX: -30,
       rotate: 10,
       stagger: 0.05,
-      delay: 0.3,
+      delay: 0.5,
       opacity: 0,
     });
     tl.from(".details", {
@@ -78,11 +78,11 @@ const Hero = ({ onImageLoad }) => {
     });
     tl.from(".image", {
       y: `70%`,
-      x:`100%`,
+      x: `100%`,
       scale: 0.6,
       rotateX: -40,
-      rotateY:-40,
-      rotate:-30,
+      rotateY: -40,
+      rotate: -30,
       opacity: 0,
       duration: 0.5,
     });
@@ -106,15 +106,21 @@ const Hero = ({ onImageLoad }) => {
         <H1 cont={"Junior"} />
         <H1 cont={"FullStack"} />
         <H1 c={true} cont={"Developer"} />
-        <div className="details flex justify-between items-center w-full lg:text-sm md:text-xs text-[10px] font-semibold px-2">
-          <div className="exp">
-            <p className="leading-tight">
+        <div className="details flex justify-between items-center w-full  px-2">
+          <div>
+            <p className="leading-tight h font-semibold g:text-sm md:text-xs text-[10px]">
               Currently Crafing
               <br />
               Knowledge By MySelf.
             </p>
           </div>
-          <div className="since">(2023 - present)</div>
+            <a
+              href="/My Resume.pdf"
+              download={"Sudip-Acharya-Resume"}
+              className="text-[--text-color] text-xs font-medium bg-[--solid-color] py-2 px-4  rounded-full"
+            >
+              Download Resume
+            </a>
         </div>
       </div>
       <div style={{ perspective: "700px" }}>
