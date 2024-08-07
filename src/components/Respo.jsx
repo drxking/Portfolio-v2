@@ -75,8 +75,6 @@ const Respo = () => {
     } else {
       gsap.to(".bottom-hr", {
         width: `0%`,
-        stagger: 0.1,
-        duration: 0.1,
       });
       gsap.to(".respo", {
         right: `-100vw`,

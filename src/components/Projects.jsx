@@ -43,7 +43,6 @@ const Projects = () => {
     tech.forEach((tec) => {
       clutter += `<li class="text-xs bg-[--text-color] px-2 py-1 w-fit rounded-full text-[--primary-color]">${tec}</li>`;
     });
-    document.body.style.overflow = `hidden`;
     titleRef.current.innerHTML = title;
     descRef.current.innerHTML = desc.split("\n").join("<br />");
     dateRef.current.innerHTML = date;
@@ -60,7 +59,6 @@ const Projects = () => {
     setClicks(true);
   }
   function handleCloseOnClick() {
-    document.body.style.overflow = `scroll`;
     setClicks(false);
   }
 
@@ -83,9 +81,12 @@ const Projects = () => {
       </div>
       <div
         ref={popup}
-        className=" flex justify-center items-start projects-popup w-full h-screen  overflow-y-scroll fixed top-[100%]"
+        className=" flex flex-col justify-start items-center projects-popup w-full h-screen  overflow-y-scroll fixed top-[100%]"
       >
-        <div className="flex flex-col items-center rounded-t-[35px] md:rounded-t-[50px]  bg-[--primary-alpha-color] backdrop-brightness-[35%] border-t border-gray-600/50 backdrop-blur-[25px] py-7 px-4 md:p-7 mt-20 ">
+        <div>
+          <div onClick={handleCloseOnClick} className="md:h-20 h-36 w-screen"></div>
+        </div>
+        <div className="flex flex-col items-center rounded-t-[35px] md:rounded-t-[50px]  bg-[--primary-alpha-color] backdrop-brightness-[35%] border-t border-gray-600/50 backdrop-blur-[25px] py-7 px-4 md:p-7  ">
           <div className="w-full md:w-[80%] flex justify-between mt-5  md:mt-10">
             <div className=" mb-4 ">
               <h1
@@ -113,7 +114,12 @@ const Projects = () => {
               className="group/hello  flex items-center leading-none h-fit  text-white"
               onClick={handleCloseOnClick}
             >
-              <span className="overflow-hidden inline-block translate-x-4 pr-2"><span className=" inline-block group-hover/hello:translate-x-0 translate-x-14  duration-300 ">Close</span></span><i className=" inline-block duration-200 text-[40px]  ri-close-fill group-hover/hello:rotate-90  leading-none"></i>
+              <span className="overflow-hidden inline-block translate-x-4 pr-2">
+                <span className=" inline-block group-hover/hello:translate-x-0 translate-x-14  duration-300 ">
+                  Close
+                </span>
+              </span>
+              <i className=" inline-block duration-200 text-[40px]  ri-close-fill group-hover/hello:rotate-90  leading-none"></i>
             </button>
           </div>
           <div className="bottom w-full flex flex-col items-center">
