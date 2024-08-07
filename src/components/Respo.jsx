@@ -22,24 +22,41 @@ const Respo = () => {
 
   useEffect(() => {
     if (widtht < 768) {
-      let start = 0;
+      let startX = 0;
+      let startY = 0;
+      let YY = false;
+      let XX = false;
       window.addEventListener("touchstart", (dets) => {
-        start = dets.changedTouches[0].screenX;
+        startX = dets.changedTouches[0].screenX;
+        startY = dets.changedTouches[0].screenY;
       });
-
-      window.addEventListener("touchend", (cets) => {
+      window.addEventListener("touchmove", (cets) => {
         let end = cets.changedTouches[0].screenX;
-        if (end - start >= 100) {
-          // respo.current.style.right = `-100vw`;
-          setswiped(false);
-        } else if (end - start <= -150) {
-          // respo.current.style.right = `0`;
-          setswiped(true);
+        let endY = cets.changedTouches[0].screenY;
+        if (endY - startY >= 20 || endY - startY <= -20) {
+          if (!XX) {
+            YY = true;
+          }
         }
+        if (!YY) {
+          if (end - startX >= 60) {
+            XX = true;
+            setswiped(false);
+            document.body.style.overflow = `hidden`;
+            startX = cets.changedTouches[0].screenX;
+          } else if (end - startX <= -60) {
+            XX = true;
+            setswiped(true);
+            document.body.style.overflow = `hidden`;
+            startX = cets.changedTouches[0].screenX;
+          }
+        }
+      });
+      window.addEventListener("touchend", () => {
+        document.body.style.overflow = `scroll`;
 
-        // Reset the values after processing
-        start = 0;
-        end = 0;
+        YY = false;
+        XX = false;
       });
     }
   }, []);
