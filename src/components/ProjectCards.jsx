@@ -61,7 +61,6 @@ const ProjectCards = ({ handleOnClick, one, onLoad }) => {
             src={one.desk_image}
             className="hover:scale-110 duration-500 h-auto w-full"
             alt="deskimage"
-            loading="lazy"
           />
         </div>
         <div className="dets flex justify-between p-2">
