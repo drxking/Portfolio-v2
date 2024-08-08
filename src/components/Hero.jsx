@@ -108,7 +108,7 @@ const Hero = ({ onImageLoad }) => {
         <H1 c={true} cont={"Developer"} />
         <div className="details flex justify-between items-center w-full  px-2">
           <div>
-            <p className="leading-tight h font-semibold g:text-sm md:text-xs text-[10px]">
+            <p className="leading-tight  font-semibold  md:text-xs text-[10px]">
               Currently Crafing
               <br />
               Knowledge By MySelf.
@@ -117,7 +117,7 @@ const Hero = ({ onImageLoad }) => {
             <a
               href="/My Resume.pdf"
               download={"Sudip-Acharya-Resume"}
-              className="text-[--text-color] text-xs font-medium bg-[--solid-color] py-2 px-4  rounded-full"
+              className="text-[--text-color] md:text-xs text-[10px] font-medium bg-[--solid-color] py-2 px-4  rounded-full"
             >
               Download Resume
             </a>
