@@ -47,7 +47,6 @@ const Projects = () => {
     descRef.current.innerHTML = desc.split("\n").join("<br />");
     dateRef.current.innerHTML = date;
     techRef.current.innerHTML = clutter;
-    console.log(url);
     if (url == "#") {
       siteUrlRef.current.href = url;
       siteUrlRef.current.removeAttribute("href");
@@ -91,7 +90,7 @@ const Projects = () => {
             <div className=" mb-4 ">
               <h1
                 ref={titleRef}
-                className="md:text-[50px] text-[40px] leading-tight font-medium text-white "
+                className="md:text-[50px] text-[8.5vw] leading-tight font-medium text-white "
               ></h1>
               <p
                 ref={dateRef}
