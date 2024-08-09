@@ -195,7 +195,7 @@ Implementation Details:
   
 The WandersGates Clone is a meticulously crafted website that showcases a blend of modern web design and interactive animations. This project leverages a combination of Tailwind CSS, HTML, JavaScript, GSAP, and LocoMotive.js to deliver an engaging and visually appealing user experience. The primary focus is on seamless animations and smooth scrolling effects, enhancing the overall aesthetic and functionality of the website.
 `,
-        desk_image: "/projects/wanderGates-desktop.png",
+        desk_image: "/projects/wandergate-desktop.png",
         mob_image: "/projects/fintory-mobile.jpg",
         site_url: "https://wanders-gates.vercel.app/",
         date: "jun 2024",
