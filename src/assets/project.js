@@ -1,7 +1,9 @@
 let project = [
     {
         title: "Kaatabook",
-        desc: `Khaatabook is a powerful note-keeping web application designed to streamline the way you manage and organize your notes. Built with modern web technologies, Khaatabook ensures a seamless and efficient user experience.
+        alert: "",
+        desc: `
+        Khaatabook is a powerful note-keeping web application designed to streamline the way you manage and organize your notes. Built with modern web technologies, Khaatabook ensures a seamless and efficient user experience.
 
  Key Features:
 
@@ -33,7 +35,9 @@ Khaatabook aims to provide an intuitive and efficient platform for note-taking a
     },
     {
         title: "Multiverse",
-        desc: `Multiverse is an innovative and visually captivating website, meticulously designed to offer a seamless and engaging user experience. Leveraging advanced web technologies, Multiverse features smooth scrolling and fluid animations, creating an immersive and dynamic environment for users to explore.
+        alert: "",
+        desc: `
+        Multiverse is an innovative and visually captivating website, meticulously designed to offer a seamless and engaging user experience. Leveraging advanced web technologies, Multiverse features smooth scrolling and fluid animations, creating an immersive and dynamic environment for users to explore.
 
  Key Features:
 
@@ -71,7 +75,9 @@ With its smooth scrolling, seamless animations, and cutting-edge design, Multive
     },
     {
         title: "Fintory",
-        desc: `Fintory is a sleek and modern website designed with a minimalist aesthetic and smooth scrolling animations. This website exemplifies the fusion of simplicity and advanced web technologies to provide an elegant and seamless user experience.
+        alert: "",
+        desc: `
+        Fintory is a sleek and modern website designed with a minimalist aesthetic and smooth scrolling animations. This website exemplifies the fusion of simplicity and advanced web technologies to provide an elegant and seamless user experience.
 
  Key Features:
 
@@ -109,6 +115,7 @@ With its minimalist layout, smooth scrolling, and engaging animations, Fintory r
     },
     {
         title: "Apple",
+        alert: "",
         desc: `
 Apple Clone Website is a meticulously crafted web project that emulates the iconic minimalist design of Apple's official website. This clone project showcases a clean, elegant, and user-friendly interface, capturing the essence of Apple's renowned design philosophy.
 
@@ -147,8 +154,8 @@ This clone project serves as a testament to the capabilities of modern web devel
     },
     {
         title: "WandersGate",
+        alert: "This project is fully focused on Mouse interactivity. Not developed for mobile view!",
         desc: `
-
 Key Features:
 
 - Seamless Scrolling:
@@ -190,7 +197,7 @@ The WandersGates Clone is a meticulously crafted website that showcases a blend 
 `,
         desk_image: "/projects/wanderGates-desktop.png",
         mob_image: "/projects/fintory-mobile.jpg",
-        site_url: "#",
+        site_url: "https://wanders-gates.vercel.app/",
         date: "jun 2024",
         tech: ["HTML", "Tailwind CSS", "JavaScript", "GSAP", "Locomotive"]
     },

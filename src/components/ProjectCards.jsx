@@ -48,6 +48,7 @@ const ProjectCards = ({ handleOnClick, one, onLoad }) => {
           mob_image: one.mob_image,
           date: one.date,
           tech: one.tech,
+          alert:one.alert
         });
       }}
       key={one.site_url}

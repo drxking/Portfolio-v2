@@ -20,6 +20,7 @@ const Projects = () => {
   const deskImageRef = useRef(null);
   const dateRef = useRef(null);
   const techRef = useRef(null);
+  const alertRef = useRef(null);
   const projects = useRef(null);
 
   useGSAP(() => {
@@ -37,7 +38,7 @@ const Projects = () => {
     }
   }, [clicks]);
 
-  function handleOnClick({ title, desc, desk_image, date, tech, url }) {
+  function handleOnClick({ title, desc, desk_image, date, tech, url, alert }) {
     deskImageRef.current.src = desk_image;
     let clutter = "";
     tech.forEach((tec) => {
@@ -46,6 +47,9 @@ const Projects = () => {
     titleRef.current.innerHTML = title;
     descRef.current.innerHTML = desc.split("\n").join("<br />");
     dateRef.current.innerHTML = date;
+    alertRef.current.innerHTML = alert
+      ? `<div class=" mt-4 text-xs font-semibold text-gray-400 flex items-center gap-2 border border-gray-700 rounded-xl backdrop-blur-[20px]  bg-black/50 p-2" ><i class="ri-error-warning-line text-red-500 text-2xl"></i> ${alert} </div>`
+      : "";
     techRef.current.innerHTML = clutter;
     if (url == "#") {
       siteUrlRef.current.href = url;
@@ -83,7 +87,10 @@ const Projects = () => {
         className=" flex flex-col justify-start items-center projects-popup w-full h-screen  overflow-y-scroll fixed top-[100%]"
       >
         <div>
-          <div onClick={handleCloseOnClick} className="md:h-20 h-36 w-screen"></div>
+          <div
+            onClick={handleCloseOnClick}
+            className="md:h-20 h-36 w-screen"
+          ></div>
         </div>
         <div className="flex flex-col items-center rounded-t-[35px] md:rounded-t-[50px]  bg-[--primary-alpha-color] backdrop-brightness-[35%] border-t border-gray-600/50 backdrop-blur-[25px] py-7 px-4 md:p-7  ">
           <div className="w-full md:w-[80%] flex justify-between mt-5  md:mt-10">
@@ -128,9 +135,10 @@ const Projects = () => {
               className="w-[100%] md:w-[80%] "
               alt="desktopImage"
             />
+            <p ref={alertRef} className="md:max-w-[80%]"></p>
             <p
               ref={descRef}
-              className=" text-sm md:w-[80%] mt-4 text-white opacity-75"
+              className=" text-sm md:w-[80%] mt-2  text-white opacity-75"
             ></p>
           </div>
         </div>
