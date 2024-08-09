@@ -3,7 +3,6 @@ import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { MutatingDots } from "react-loader-spinner";
 const Home = lazy(() => import("./pages/Home"));
-
 const App = () => {
   return (
     <Router>
