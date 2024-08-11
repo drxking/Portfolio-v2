@@ -77,14 +77,19 @@ const Hero = ({ onImageLoad }) => {
       opacity: 0,
     });
     tl.from(".image", {
+      x:`100%`,
       y: `70%`,
-      x: `100%`,
       scale: 0.6,
       rotateX: -40,
       rotateY: -40,
       rotate: -30,
       opacity: 0,
       duration: 0.5,
+    });
+    tl.to(".image", {
+      scale: 1,
+      duration: 0.4,
+      ease:"Power.in"
     });
   }, []);
 
@@ -124,7 +129,7 @@ const Hero = ({ onImageLoad }) => {
         </div>
       </div>
       <div style={{ perspective: "700px" }}>
-        <div className="image origin-tops md:w-96 w-full max-w-80 mt-10 overflow-hidden  rounded-3xl">
+        <div className="image origin-tops scale-[0.9] md:w-96 w-full max-w-80 mt-10 overflow-hidden  rounded-3xl">
           <img
             onLoad={onImageLoad}
             src="IMG-20240323-WA0049.jpg"
