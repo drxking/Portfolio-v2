@@ -18,12 +18,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+*::-webkit-scrollbar{
+  display: none;
+}
 
 html{
   scroll-behavior: smooth;
 }
 html::-webkit-scrollbar{
-  /* display: none; */
+  display: none;
   width: 8px;
 }
 html::-webkit-scrollbar-button{

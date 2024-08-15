@@ -3,7 +3,8 @@ import Logo from "./H1logo";
 import Toggle from "./Toggle";
 import gsap from "gsap";
 import { useState } from "react";
-const Navbar = () => {
+import { Link } from "react-router-dom";
+const Navbar = ({ isAdmin }) => {
   const [clicked, setClicked] = useState(false);
   useGSAP(() => {
     if (clicked) {
@@ -29,8 +30,7 @@ const Navbar = () => {
   }
 
   const links = {
-    Skills: "#skills",
-    Projects: "#projects",
+    MyBlog: "/blogs",
   };
   const linkArr = Object.entries(links);
 
@@ -41,31 +41,38 @@ const Navbar = () => {
         <ul className="items-center justify-center gap-4 hidden md:flex">
           {linkArr.map(([names, href]) => (
             <li key={names} className="text-sm">
-              <a href={href}>{names}</a>
+              <Link to={href}>{names}</Link>
             </li>
           ))}
         </ul>
       </div>
 
       <div className="right items-center gap-4 flex">
-
-        <h2 className="text-sm font-medium hidden md:flex">Let's Connect</h2>
-        <div className=" px-1 pl-5 py-1 rounded-full bg-[--solid-color] hidden md:flex">
-          <input
-            name="email"
-            readOnly
-            className="text-sm focus:outline-none pointer-events-none font-medium bg-transparent"
-            type="text"
-            value={"drxking456@gmail.com"}
-          />
-          <button title="Copy Email" onClick={handleCopy}>
-            <i className="ri-file-copy-2-line bg-slate-400 text-[--text-color] p-1 rounded-full focus:outline-none relative ">
-              <div className="popup absolute h-full w-full opacity-0 scale-0 bg-blue-600 rounded-full top-0 left-0">
-                <i className="ri-check-line"></i>
-              </div>
-            </i>
-          </button>
-        </div>
+        {!isAdmin ? (
+          <>
+            <h2 className="text-sm font-medium hidden md:flex">
+              Let's Connect
+            </h2>
+            <div className=" px-1 pl-5 py-1 rounded-full bg-[--solid-color] hidden md:flex">
+              <input
+                name="email"
+                readOnly
+                className="text-sm focus:outline-none pointer-events-none font-medium bg-transparent"
+                type="text"
+                value={"drxking456@gmail.com"}
+              />
+              <button title="Copy Email" onClick={handleCopy}>
+                <i className="ri-file-copy-2-line bg-slate-400 text-[--text-color] p-1 rounded-full focus:outline-none relative ">
+                  <div className="popup absolute h-full w-full opacity-0 scale-0 bg-blue-600 rounded-full top-0 left-0">
+                    <i className="ri-check-line"></i>
+                  </div>
+                </i>
+              </button>
+            </div>
+          </>
+        ) : (
+          ""
+        )}
         <Toggle />
       </div>
     </div>

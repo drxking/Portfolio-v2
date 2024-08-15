@@ -3,22 +3,13 @@ import Links from "./Links";
 import H1logo from "./H1logo";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { Link } from "react-router-dom";
 
-const Respo = () => {
+const Respo = ({list}) => {
   let [swiped, setswiped] = useState(0);
   let widtht = window.innerWidth;
-  const linkArr = Object.entries({
-    Skills: "#skills",
-    Projects: "#projects",
-    "About me": "#",
-    Contact: "#",
-  });
-  const icons = [
-    "ri-nodejs-line",
-    "ri-settings-4-line",
-    "ri-account-circle-line",
-    "ri-contacts-book-line",
-  ];
+  const linkArr = Object.entries(list);
+
 
   useEffect(() => {
     if (widtht < 768) {
@@ -93,19 +84,29 @@ const Respo = () => {
       <H1logo />
 
       <ul className="hello gap-6 flex flex-col mt-20 duration-300 w-full">
-        {linkArr.map(([names, href], index) => (
+        {linkArr.map(([names, href]) => (
           <li
             key={names}
             className="relative text-[7vw] text-[--text-color]  pb-1 pt-0 w-full flex items-center gap-1"
           >
-            <i className={`${icons[index]} text-2xl`}></i>
-            <a
-              className="font-medium font-[oswald] "
-              onClick={handleLinkClick}
-              href={href}
-            >
-              {names}
-            </a>
+            {href.startsWith("#") ? (
+              <a
+                className="font-medium font-[oswald] "
+                onClick={handleLinkClick}
+                href={href}
+              >
+                {names}
+              </a>
+            ) : (
+              <Link
+                className="font-medium font-[oswald] "
+                onClick={handleLinkClick}
+                to={href}
+              >
+                {names}
+              </Link>
+            )}
+
             <div className="bottom-hr bg-[--text-color] w-[0%] h-[1px] absolute bottom-0"></div>
           </li>
         ))}

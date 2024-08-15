@@ -30,21 +30,38 @@ const skill = Object.entries({
 const Skills = () => {
   let refff = useRef();
   useGSAP(() => {
-    let tt = refff.current.querySelectorAll(".ind");
-    tt.forEach((yy) => {
-      gsap.from(yy, {
-        opacity: 0,
-        y: `70%`,
-        scale: 0.7,
-        rotateX: -90,
-        duration: 0.4,
-        scrollTrigger: {
-          trigger: yy,
-          start: "top bottom",
-          end: "top 80%",
-        },
+    let widtht = window.innerWidth;
+    if (widtht < 768) {
+      let tt = refff.current.querySelectorAll(".ind");
+      tt.forEach((yy) => {
+        gsap.from(yy, {
+          opacity: 0,
+          y: `70%`,
+          scale: 0.7,
+          rotateX: -90,
+          duration: 0.4,
+          scrollTrigger: {
+            trigger: yy,
+            start: "top bottom",
+            end: "top 80%",
+          },
+        });
       });
-    });
+    }else{
+      // let tt = refff.current.querySelectorAll(".ind");
+        gsap.from(".ind", {
+          opacity: 0,
+          duration: 1.5,
+          stagger:0.07,
+          scrollTrigger: {
+            trigger: "#skills",
+            start: `50% bottom`,
+            end:"bottom 70%",
+            // markers:true,
+            scrub:1
+          },
+        });
+    }
   }, []);
 
   return (
@@ -56,12 +73,12 @@ const Skills = () => {
       <h1 className="text-3xl font-semibold mb-10 ">Skills</h1>
       <ul className="flex  flex-1 gap-8 flex-wrap justify-center">
         {skill.map(([icons, desc]) => (
-          <div key={desc} style={{ perspective: "300px" }}>
-            <li className="ind w-52 flex flex-col items-center gap-6 origin-top ">
+          <li key={desc} style={{ perspective: "300px" }}>
+            <div className="ind w-52 flex flex-col items-center gap-6 origin-top ">
               <i className={`${icons} text-[80px] leading-none h-24`}></i>
               <p className="text-center text-sm ">{desc}</p>
-            </li>
-          </div>
+            </div>
+          </li>
         ))}
       </ul>
     </div>

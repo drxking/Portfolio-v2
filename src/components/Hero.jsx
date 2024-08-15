@@ -1,5 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useState } from "react";
 
 const H1 = ({ cont, c }) => {
   return (
@@ -16,8 +17,10 @@ const Hero = ({ onImageLoad }) => {
   useGSAP(() => {
     let widtht = window.innerWidth;
     if (widtht < 768) {
-      setInterval(() => {
-        let gl = gsap.timeline();
+        let gl = gsap.timeline({
+          repeat:-1,
+          repeatDelay:4
+        });
         gl.to(".swipe", {
           opacity: 1,
           duration: 0.2,
@@ -61,7 +64,6 @@ const Hero = ({ onImageLoad }) => {
           duration: 0,
           delay: 0.2,
         });
-      }, 7000);
     }
     let tl = gsap.timeline();
     tl.from(".h1-s", {
@@ -77,7 +79,7 @@ const Hero = ({ onImageLoad }) => {
       opacity: 0,
     });
     tl.from(".image", {
-      x:`100%`,
+      x: `100%`,
       y: `70%`,
       scale: 0.6,
       rotateX: -40,
@@ -89,7 +91,7 @@ const Hero = ({ onImageLoad }) => {
     tl.to(".image", {
       scale: 1,
       duration: 0.4,
-      ease:"Power.in"
+      ease: "Power.in",
     });
   }, []);
 
@@ -119,13 +121,13 @@ const Hero = ({ onImageLoad }) => {
               Knowledge By MySelf.
             </p>
           </div>
-            <a
-              href="/My Resume.pdf"
-              download={"Sudip-Acharya-Resume"}
-              className="text-[--text-color] md:text-xs text-[10px] font-medium bg-[--solid-color] py-2 px-4  rounded-full"
-            >
-              Download Resume
-            </a>
+          <a
+            href="/My Resume.pdf"
+            download={"Sudip-Acharya-Resume"}
+            className="text-[--text-color] md:text-xs text-[10px] font-medium bg-[--solid-color] py-2 px-4  rounded-full"
+          >
+            Download Resume
+          </a>
         </div>
       </div>
       <div style={{ perspective: "700px" }}>

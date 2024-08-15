@@ -1,9 +1,9 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import Respo from "../components/Respo";
 import Skills from "../components/Skills";
 import { useState } from "react";
 import Projects from "../components/Projects";
+import Respo from "../components/Respo";
 
 const Home = () => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
@@ -12,13 +12,20 @@ const Home = () => {
   };
 
   return (
-      <div className="lg:px-20 md:px-10 px-4 text-[--text-color] duration-300 overflow-x-hidden">
-        <Respo />
-        <Navbar />
-        <Hero onImageLoad={handleImageLoad} />
-        {isImageLoaded && <Skills />}
-        {isImageLoaded && <Projects />}
-      </div>
+    <div className="lg:px-20 md:px-10 px-4 text-[--text-color] duration-300 overflow-x-hidden">
+      <Navbar />
+      <Respo
+        list={{
+          Skills: "#skills",
+          Projects: "#projects",
+          Contact: "#",
+          Blogs: "/blogs",
+        }}
+      />
+      <Hero onImageLoad={handleImageLoad} />
+      {isImageLoaded && <Skills />}
+      {isImageLoaded && <Projects />}
+    </div>
   );
 };
 
