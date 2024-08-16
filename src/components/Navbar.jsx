@@ -30,7 +30,7 @@ const Navbar = ({ isAdmin }) => {
   }
 
   const links = {
-    MyBlog: "/blogs",
+    MyBlog: isAdmin ? "/admin" : "/blogs",
   };
   const linkArr = Object.entries(links);
 

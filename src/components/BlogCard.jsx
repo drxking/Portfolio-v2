@@ -18,9 +18,9 @@ const BlogCard = ({
           <div className="w-full flex md:flex-row flex-col justify-center  md:justify-start items-center gap-5 md:py-4 py-4 px-2 md:px-10">
             <div className="left md:h-52 md:w-64 w-full">
               <img
-                className=" rounded-3xl w-full h-full shadow-lg"
-                src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3AtNDY2LXBhLTA2NjEuanBn.jpg"
-                alt=""
+                className=" rounded-3xl w-full h-full shadow-lg object-cover"
+                src={image}
+                alt={headline}
               />
             </div>
             <div className="right w-full md:w-3/4 py-1  md:py-4">
@@ -51,9 +51,9 @@ const BlogCard = ({
           <div className="w-full flex md:flex-row flex-col justify-center  md:justify-start items-center gap-5 md:py-4 py-4 px-2 md:px-10">
             <div className="left md:h-52 md:w-64 w-full">
               <img
-                className=" rounded-3xl w-full h-full shadow-lg"
-                src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3AtNDY2LXBhLTA2NjEuanBn.jpg"
-                alt=""
+                className=" rounded-3xl w-full h-full shadow-lg object-cover"
+                src={image}
+                alt={headline}
               />
             </div>
             <div className="right w-full md:w-3/4 py-1  md:py-4">

@@ -61,7 +61,7 @@ const Blog = () => {
           <div className="flex flex-col w-full md:w-[60%]  items-center justify-center mt-10 ">
             <img
               className="w-full  md:h-96 object-cover  rounded-3xl shadow-md"
-              src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3AtNDY2LXBhLTA2NjEuanBn.jpg"
+              src={data.image}
               alt=""
             />
             <div className="w-full px-2 py-3 flex items-center justify-between">
@@ -69,7 +69,7 @@ const Blog = () => {
                 <img
                   className="h-8 w-8 rounded-full"
                   src="https://img.freepik.com/premium-photo/cartoon-minimal-style-avatar-young-smiling-man-named-adam-3d-modern-people-character-illustration_76964-83148.jpg"
-                  alt=""
+                  alt="author"
                 />
                 <p className="opacity-60 leading-none">{data.author}</p>
               </div>

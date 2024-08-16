@@ -1,25 +1,30 @@
 import Login from "../components/Login";
-import Cookies from "js-cookie";
 import axios from "axios";
 import config from "../config";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const Admin = () => {
   const navigate = useNavigate();
+  // axios.defaults.withCredentials = true;
   function handleLogin({ username, password }) {
     axios
       .post(
-        `${config.apiUrl}/admin`,
-        { username: username, password: password },
-        { withCredentials: true }
+        `${config.apiUrl}/admin/login`,
+        {
+          username: username,
+          password: password,
+        },
+
+        {
+          withCredentials: true,
+        }
       )
       .then((response) => {
         if (response.data.status === "success") {
-          setLoggedIn(true);
-          Cookies.set("token", response.data.token);
           navigate("/admin");
         } else {
-          alert(response.data.message);
+          navigate("/login");
         }
       })
       .catch((err) => alert(err));
