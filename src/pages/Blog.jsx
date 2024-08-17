@@ -35,6 +35,10 @@ const Blog = () => {
         <meta property="og:title" content={data.headline} />
         <meta property="og:description" content={data.desc} />
         <meta property="og:image" content={data.image} />
+        <meta
+          property="og:url"
+          content={`https://sudipacharya456.com.np/blogs/${id}`}
+        />
         <meta property="og:type" content="article" />
       </Helmet>
       <Navbar />
