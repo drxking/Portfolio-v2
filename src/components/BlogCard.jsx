@@ -67,7 +67,7 @@ const BlogCard = ({
                 <div className="flex items-center gap-2">
                   <img
                     className="h-8 w-8 rounded-full"
-                    src="https://img.freepik.com/premium-photo/cartoon-minimal-style-avatar-young-smiling-man-named-adam-3d-modern-people-character-illustration_76964-83148.jpg"
+                    src="https://res.cloudinary.com/dgcpqppcd/image/upload/v1723882963/uploads/fsreananmo1jcsbsl7ti.jpg"
                     alt="hello"
                   />
                   <p className="opacity-75 text-sm capitalize">{author}</p>

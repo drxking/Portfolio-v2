@@ -11,7 +11,7 @@ import { ThemeContext } from "../App";
 const Blog = () => {
   let { id } = useParams();
   let { theme } = useContext(ThemeContext);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -68,7 +68,7 @@ const Blog = () => {
               <div className="author flex gap-2 items-center capitalize ">
                 <img
                   className="h-8 w-8 rounded-full"
-                  src="https://img.freepik.com/premium-photo/cartoon-minimal-style-avatar-young-smiling-man-named-adam-3d-modern-people-character-illustration_76964-83148.jpg"
+                  src="https://res.cloudinary.com/dgcpqppcd/image/upload/v1723882963/uploads/fsreananmo1jcsbsl7ti.jpg"
                   alt="author"
                 />
                 <p className="opacity-60 leading-none">{data.author}</p>
@@ -85,11 +85,46 @@ const Blog = () => {
               {data.headline}
             </h1>
             <p className="mt-4 md:w-[60%] opacity-85 text-base">
-              {data.desc?.split("\n").map((li, index) => (
-                <span key={index}>
-                  {li} <br />
-                </span>
-              ))}
+              {/* {data.desc
+                .split("\n")
+                .map((e) => {
+                  if (e.startsWith("##")) {
+                    let tl = e.split("");
+                    tl.splice(0, 2);
+                    let yy = tl.join("");
+                    return `<span class="font-medium text-xl">${yy}</span>`;
+                  } else {
+                    return e;
+                  }
+                })
+                .join("<br/>")} */}
+              {data.desc?.split("\n").map(
+                (e, index) => {
+                  if (e.startsWith("##")) {
+                    let tl = e.split("");
+                    tl.splice(0, 2);
+                    let yy = tl.join("");
+                    return (
+                      <span key={index} className="font-medium text-xl">
+                        {yy}
+                        <br />
+                      </span>
+                    );
+                  } else {
+                    return (
+                      <span key={index}>
+                        {e}
+                        <br />
+                      </span>
+                    );
+                  }
+                }
+                //  (
+                //   <span key={index}>
+                //     {li} <br />
+                //   </span>
+                // )
+              )}
             </p>
           </article>
         </>

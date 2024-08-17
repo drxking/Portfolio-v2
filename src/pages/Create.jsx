@@ -1,10 +1,15 @@
 import axios from "axios";
-import React, { useRef } from "react";
+import React, { useRef, useState, useContext } from "react";
 import config from "../config";
 import { useNavigate } from "react-router-dom";
+import { MutatingDots } from "react-loader-spinner";
+import { ThemeContext } from "../App";
 
 const Create = () => {
   const navigate = useNavigate();
+  const [isUpdating, setIsUpdating] = useState(false);
+  let { theme } = useContext(ThemeContext);
+
   const previewH1 = useRef(null);
   const previewp = useRef(null);
   const previewImage = useRef(null);
@@ -21,9 +26,19 @@ const Create = () => {
     textHeading.current.style.height = textHeading.current.scrollHeight + "px";
   }
   function autoGrowDesc(e) {
-    console.log();
-
-    previewp.current.innerHTML = e.target.value.split("\n").join("<br/>");
+    previewp.current.innerHTML = e.target.value
+      .split("\n")
+      .map((e) => {
+        if (e.startsWith("##")) {
+          let tl = e.split("");
+          tl.splice(0, 2);
+          let yy = tl.join("");
+          return `<span class="font-medium text-xl">${yy}</span>`;
+        } else {
+          return e;
+        }
+      })
+      .join("<br/>");
     // Reset the height to auto to correctly calculate the new height
     textPara.current.style.height = "50px";
     // Set the height based on the scroll height
@@ -48,7 +63,7 @@ const Create = () => {
     let heading = textHeading.current.value;
     let desc = textPara.current.value;
     let file = inputImage.current.files[0];
-
+    setIsUpdating(true);
     console.log(heading, desc);
     axios
       .post(
@@ -64,6 +79,8 @@ const Create = () => {
       .then((response) => {
         if (response.data.status == "success") {
           navigate("/admin");
+        } else {
+          alert(response.data.message);
         }
       })
       .catch((err) => {
@@ -85,7 +102,7 @@ const Create = () => {
               ref={writingArea}
               className="writing-area "
             >
-              <div className="flex items-center justify-between px-2 mb-2">
+              <div className="flex items-center justify-between px-2 mb-2 ">
                 <input
                   onChange={handleImage}
                   ref={inputImage}
@@ -93,11 +110,30 @@ const Create = () => {
                   name="image"
                   id=""
                 />
-                <input
-                  type="submit"
-                  value="Post"
-                  className="px-6 py-2 bg-purple-500 rounded-lg"
-                />
+                <div className="relative">
+                  {isUpdating ? (
+                    <span className="absolute scale-50 right-16 top-1/2 -translate-y-1/2 ">
+                      <MutatingDots
+                        visible={true}
+                        height="100"
+                        width="100"
+                        color={theme ? "#e5e5e5" : "#111"}
+                        secondaryColor={theme ? "#e5e5e5" : "#111"}
+                        radius="12.5"
+                        ariaLabel="mutating-dots-loading"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                      />
+                    </span>
+                  ) : (
+                    ""
+                  )}
+                  <input
+                    type="submit"
+                    value="Post"
+                    className="px-6 py-2 bg-purple-500 rounded-lg cursor-pointer"
+                  />
+                </div>
               </div>
               <textarea
                 onInput={autoGrowHeading}
