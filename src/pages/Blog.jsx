@@ -7,6 +7,7 @@ import Respo from "../components/Respo";
 import { MutatingDots } from "react-loader-spinner";
 import formatMongoDateToHumanReadable from "../utils/format";
 import { ThemeContext } from "../App";
+import { Helmet } from "react-helmet";
 
 const Blog = () => {
   let { id } = useParams();
@@ -30,6 +31,12 @@ const Blog = () => {
 
   return (
     <div className="lg:px-20 min-h-screen flex flex-col items-center md:px-10 px-4 text-[--text-color] duration-300 overflow-x-hidden pb-10">
+      <Helmet>
+        <meta property="og:title" content={data.headline} />
+        <meta property="og:description" content={data.desc} />
+        <meta property="og:image" content={data.image} />
+        <meta property="og:type" content="article" />
+      </Helmet>
       <Navbar />
       <Respo
         list={{
