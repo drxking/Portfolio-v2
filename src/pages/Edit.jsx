@@ -19,6 +19,8 @@ const Create = () => {
   const previewArea = useRef(null);
   const textHeading = useRef(null);
   const textPara = useRef(null);
+  const inputImage = useRef(null);
+  const imageTitle = useRef(null);
   function autoGrowHeading(e) {
     previewH1.current.innerHTML = e.target.value;
     // Reset the height to auto to correctly calculate the new height
@@ -52,24 +54,34 @@ const Create = () => {
     setIsUpdating(true);
     let heading = textHeading.current.value;
     let desc = textPara.current.value;
+    let file = inputImage.current.files[0];
+    console.log(file);
     axios
-      .patch(
+      .put(
         `${config.apiUrl}/api/posts/${id}`,
         {
           headline: heading,
           desc: desc,
+          image: file,
         },
         {
           withCredentials: true,
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
         }
       )
       .then((response) => {
         if (response.data.status == "success") {
           navigate("/admin");
+        } else {
+          alert(response.data.message);
+          setIsUpdating(false);
         }
       })
       .catch((err) => {
         alert(err.message);
+        setIsUpdating(false);
       });
   }
   function handleDelete() {
@@ -90,6 +102,21 @@ const Create = () => {
       });
   }
 
+  function handleImage(e) {
+    // console.log(e.target.files[0]);
+    // previewImage.current.objectSrc = e.target.value;
+    const file = e.target.files[0];
+    if (file) {
+      previewImage.current.src = URL.createObjectURL(file);
+      previewImage.current.classList.remove("h-72");
+      imageTitle.current.innerHTML = file.name;
+
+      // Release the object URL after the image is loaded to free memory
+      previewImage.current.onload = () =>
+        URL.revokeObjectURL(previewImage.current.src);
+    }
+  }
+
   useEffect(() => {
     axios
       .get(`${config.apiUrl}/api/posts/${id}`, {
@@ -100,6 +127,25 @@ const Create = () => {
         textHeading.current.value = response.data.headline;
         textPara.current.value = response.data.desc;
         previewImage.current.src = response.data.image;
+        imageTitle.current.innerHTML =
+          response.data.image_public_id.split("/")[1];
+        textHeading.current.style.height =
+          textHeading.current.scrollHeight + "px";
+        textPara.current.style.height = textPara.current.scrollHeight + "px";
+        previewp.current.innerHTML = response.data.desc
+          .split("\n")
+          .map((e) => {
+            if (e.startsWith("##")) {
+              let tl = e.split("");
+              tl.splice(0, 2);
+              let yy = tl.join("");
+              return `<span class="font-medium text-xl">${yy}</span>`;
+            } else {
+              return e;
+            }
+          })
+          .join("<br/>");
+        previewH1.current.innerHTML = response.data.headline;
       })
       .catch((err) => {
         alert(err.message);
@@ -167,6 +213,27 @@ const Create = () => {
                 >
                   Delete
                 </button>
+              </div>
+              <div className="flex items-end justify-between px-0 mb-2 gap-2">
+                <div className="relative w-full rounded-xl overflow-hidden">
+                  <input
+                    onChange={handleImage}
+                    ref={inputImage}
+                    type="file"
+                    name="image"
+                    className="border border-gray-500 rounded-2xl py-10 opacity-0 w-full cursor-pointer"
+                  />
+                  <div className="overlay bg-gray-600/40 absolute pointer-events-none h-full w-full top-0 flex flex-col gap-1 items-center justify-center">
+                    <div className="circle rounded-full bg-blue-500 h-16 w-16 flex items-center justify-center relative duration-300">
+                      <div className="vert h-[50%] w-[3px] bg-white"></div>
+                      <div className="vert h-[50%] absolute rotate-90 w-[3px] bg-white"></div>
+                    </div>
+                    <p
+                      ref={imageTitle}
+                      className="line-clamp-1 text-center opacity-80 w-full px-4"
+                    ></p>
+                  </div>
+                </div>
               </div>
               <textarea
                 onInput={autoGrowHeading}

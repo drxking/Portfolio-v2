@@ -40,7 +40,12 @@ const Admin = () => {
 
   useEffect(() => {
     axios
-      .get(`${config.apiUrl}/api/posts`)
+      .get(`${config.apiUrl}/admin/posts`, {
+        withCredentials: true,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
       .then((response) => {
         setIsLoading(false);
         setData(response.data);

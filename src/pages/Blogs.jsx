@@ -6,6 +6,7 @@ import config from "../config";
 import BlogCard from "../components/BlogCard";
 import { MutatingDots } from "react-loader-spinner";
 import { ThemeContext } from "../App";
+import { Helmet } from "react-helmet";
 
 const Blogs = () => {
   let { theme } = useContext(ThemeContext);
@@ -28,6 +29,9 @@ const Blogs = () => {
 
   return (
     <div className="lg:px-20 min-h-screen flex flex-col md:px-10 px-4 text-[--text-color] duration-300 overflow-x-hidden">
+      <Helmet>
+        <title>Blogs - Sudip Acharya</title>
+      </Helmet>
       <Navbar />
       <Respo
         list={{

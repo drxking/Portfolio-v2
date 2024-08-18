@@ -4,6 +4,7 @@ import Skills from "../components/Skills";
 import { useState } from "react";
 import Projects from "../components/Projects";
 import Respo from "../components/Respo";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
@@ -13,6 +14,11 @@ const Home = () => {
 
   return (
     <div className="lg:px-20 md:px-10 px-4 text-[--text-color] duration-300 overflow-x-hidden">
+      <Helmet>
+        <title>
+          Sudip Acharya
+        </title>
+      </Helmet>
       <Navbar />
       <Respo
         list={{

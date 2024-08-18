@@ -31,16 +31,21 @@ const Blog = () => {
 
   return (
     <div className="lg:px-20 min-h-screen flex flex-col items-center md:px-10 px-4 text-[--text-color] duration-300 overflow-x-hidden pb-10">
-      <Helmet>
-        <meta property="og:title" content={data.headline} />
-        <meta property="og:description" content={data.desc} />
-        <meta property="og:image" content={data.image} />
-        <meta
-          property="og:url"
-          content={`https://sudipacharya456.com.np/blogs/${id}`}
-        />
-        <meta property="og:type" content="article" />
-      </Helmet>
+      {data ? (
+        <Helmet>
+          <meta property="og:title" content={data.headline} />
+          <meta property="og:description" content={data.desc} />
+          <meta property="og:image" content={data.image} />
+          <meta
+            property="og:url"
+            content={`https://sudipacharya456.com.np/blogs/${id}`}
+          />
+          <title>{data.headline}</title>
+          <meta property="og:type" content="article" />
+        </Helmet>
+      ) : (
+        ""
+      )}
       <Navbar />
       <Respo
         list={{
@@ -95,20 +100,7 @@ const Blog = () => {
             <h1 className="md:text-[34px] text-2xl font-medium text-center mt-2 leading-tight md:w-[60%]">
               {data.headline}
             </h1>
-            <p className="mt-4 md:w-[60%] opacity-85 text-base">
-              {/* {data.desc
-                .split("\n")
-                .map((e) => {
-                  if (e.startsWith("##")) {
-                    let tl = e.split("");
-                    tl.splice(0, 2);
-                    let yy = tl.join("");
-                    return `<span class="font-medium text-xl">${yy}</span>`;
-                  } else {
-                    return e;
-                  }
-                })
-                .join("<br/>")} */}
+            <div className="mt-4 md:w-[60%] opacity-85 text-base">
               {data.desc?.split("\n").map(
                 (e, index) => {
                   if (e.startsWith("##")) {
@@ -116,17 +108,17 @@ const Blog = () => {
                     tl.splice(0, 2);
                     let yy = tl.join("");
                     return (
-                      <span key={index} className="font-medium text-xl">
+                      <h2 key={index} className="font-medium text-xl">
                         {yy}
                         <br />
-                      </span>
+                      </h2>
                     );
                   } else {
                     return (
-                      <span key={index}>
+                      <p key={index}>
                         {e}
                         <br />
-                      </span>
+                      </p>
                     );
                   }
                 }
@@ -136,7 +128,7 @@ const Blog = () => {
                 //   </span>
                 // )
               )}
-            </p>
+            </div>
           </article>
         </>
       ) : (

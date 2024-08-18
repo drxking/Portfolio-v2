@@ -18,6 +18,7 @@ const Create = () => {
   const textHeading = useRef(null);
   const inputImage = useRef(null);
   const textPara = useRef(null);
+  const imageTitle = useRef(null);
   function autoGrowHeading(e) {
     previewH1.current.innerHTML = e.target.value;
     // Reset the height to auto to correctly calculate the new height
@@ -51,6 +52,7 @@ const Create = () => {
     if (file) {
       previewImage.current.src = URL.createObjectURL(file);
       previewImage.current.classList.remove("h-72");
+      imageTitle.current.innerHTML = file.name;
 
       // Release the object URL after the image is loaded to free memory
       previewImage.current.onload = () =>
@@ -63,6 +65,7 @@ const Create = () => {
     let heading = textHeading.current.value;
     let desc = textPara.current.value;
     let file = inputImage.current.files[0];
+    console.log(file);
     setIsUpdating(true);
     console.log(heading, desc);
     axios
@@ -81,10 +84,12 @@ const Create = () => {
           navigate("/admin");
         } else {
           alert(response.data.message);
+          setIsUpdating(false);
         }
       })
       .catch((err) => {
         alert(err.message);
+        setIsUpdating(false);
       });
   }
 
@@ -94,45 +99,33 @@ const Create = () => {
         <h1 className="text-xl font-medium">Write New Blog</h1>
         <h1 className="text-xl font-medium">Live Preview</h1>
       </div>
-      <div className="w-full  flex md:flex-row flex-col mt-2">
-        <div className="write w-full md:w-1/2 h-[90vh]  flex flex-col">
+      <div className="w-full  flex md:flex-row flex-col mt-2 gap-4 md:gap-0">
+        <div className="write w-full md:w-1/2 max-h-[90vh]  flex flex-col">
           <div className="  overflow-scroll flex-1 px-2">
             <form
               onSubmit={handleSubmit}
               ref={writingArea}
               className="writing-area "
             >
-              <div className="flex items-center justify-between px-2 mb-2 ">
-                <input
-                  onChange={handleImage}
-                  ref={inputImage}
-                  type="file"
-                  name="image"
-                  id=""
-                />
-                <div className="relative">
-                  {isUpdating ? (
-                    <span className="absolute scale-50 right-16 top-1/2 -translate-y-1/2 ">
-                      <MutatingDots
-                        visible={true}
-                        height="100"
-                        width="100"
-                        color={theme ? "#e5e5e5" : "#111"}
-                        secondaryColor={theme ? "#e5e5e5" : "#111"}
-                        radius="12.5"
-                        ariaLabel="mutating-dots-loading"
-                        wrapperStyle={{}}
-                        wrapperClass=""
-                      />
-                    </span>
-                  ) : (
-                    ""
-                  )}
+              <div className="flex items-end justify-between px-0 mb-2 gap-2">
+                <div className="relative w-full rounded-xl overflow-hidden">
                   <input
-                    type="submit"
-                    value="Post"
-                    className="px-6 py-2 bg-purple-500 rounded-lg cursor-pointer"
+                    onChange={handleImage}
+                    ref={inputImage}
+                    type="file"
+                    name="image"
+                    className="border border-gray-500 rounded-2xl py-10 opacity-0 w-full cursor-pointer"
                   />
+                  <div className="overlay bg-gray-600/40 absolute pointer-events-none h-full w-full top-0 flex flex-col gap-1 items-center justify-center">
+                    <div className="circle rounded-full bg-blue-500 h-16 w-16 flex items-center justify-center relative duration-300">
+                      <div className="vert h-[50%] w-[3px] bg-white"></div>
+                      <div className="vert h-[50%] absolute rotate-90 w-[3px] bg-white"></div>
+                    </div>
+                    <p
+                      ref={imageTitle}
+                      className="line-clamp-1 text-center opacity-80 w-full px-4"
+                    ></p>
+                  </div>
                 </div>
               </div>
               <textarea
@@ -151,6 +144,30 @@ const Create = () => {
                 name="desc"
                 className="w-full px-2 py-2 bg-gray-600/40 text-base overflow-hidden resize-none focus:outline-none h-[50px] rounded-xl"
               ></textarea>
+              <div className="relative  flex justify-end">
+                {isUpdating ? (
+                  <span className="absolute scale-50 right-24 top-1/2 -translate-y-1/2 ">
+                    <MutatingDots
+                      visible={true}
+                      height="100"
+                      width="100"
+                      color={theme ? "#e5e5e5" : "#111"}
+                      secondaryColor={theme ? "#e5e5e5" : "#111"}
+                      radius="12.5"
+                      ariaLabel="mutating-dots-loading"
+                      wrapperStyle={{}}
+                      wrapperClass=""
+                    />
+                  </span>
+                ) : (
+                  ""
+                )}
+                <input
+                  type="submit"
+                  value="Post"
+                  className="px-10 py-2 bg-purple-500 rounded-lg cursor-pointer"
+                />
+              </div>
             </form>
           </div>
         </div>
