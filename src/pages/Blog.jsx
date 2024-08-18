@@ -37,6 +37,7 @@ const Blog = () => {
           <meta property="description" content={data.desc.slice(0, 100)} />
           <meta property="image" content={data.image} />
           <meta name="author" content="Sudip Acharya" />
+          <link rel="canonical" href={`https://sudipacharya456.com.np/${id}`} />
           <meta
             property="og:url"
             content={`https://sudipacharya456.com.np/blogs/${id}`}
