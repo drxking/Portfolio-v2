@@ -34,8 +34,9 @@ const Blog = () => {
       {data ? (
         <Helmet>
           <meta property="og:title" content={data.headline} />
-          <meta property="og:description" content={data.desc} />
-          <meta property="og:image" content={data.image} />
+          <meta property="description" content={data.desc.slice(0, 100)} />
+          <meta property="image" content={data.image} />
+          <meta name="author" content="Sudip Acharya" />
           <meta
             property="og:url"
             content={`https://sudipacharya456.com.np/blogs/${id}`}
