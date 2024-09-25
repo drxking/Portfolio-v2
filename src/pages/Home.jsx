@@ -5,6 +5,7 @@ import { useState } from "react";
 import Projects from "../components/Projects";
 import Respo from "../components/Respo";
 import { Helmet } from "react-helmet";
+import Form from "./Form";
 
 const Home = () => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
@@ -31,6 +32,7 @@ const Home = () => {
       <Hero onImageLoad={handleImageLoad} />
       {isImageLoaded && <Skills />}
       {isImageLoaded && <Projects />}
+      {isImageLoaded && <Form />}
     </div>
   );
 };
