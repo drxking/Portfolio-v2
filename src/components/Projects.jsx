@@ -17,7 +17,7 @@ const Projects = () => {
   const titleRef = useRef(null);
   const descRef = useRef(null);
   const siteUrlRef = useRef(null);
-  const deskImageRef = useRef(null);
+  const deskImageRef = useRef(null); 
   const dateRef = useRef(null);
   const techRef = useRef(null);
   const alertRef = useRef(null);
