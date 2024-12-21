@@ -65,7 +65,6 @@ const Projects = () => {
   function handleCloseOnClick() {
     setClicks(false);
   }
-
   return (
     <div id="projects" className="flex flex-col items-center mb-32">
       <h1 className="text-3xl font-semibold w-full md:w-fit">Projects</h1>
