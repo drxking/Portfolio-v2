@@ -11,25 +11,25 @@ const Form = () => {
             <li>
               <a className="flex items-center gap-1" href="https://www.facebook.com/sudip.acharya.927980">
                 <i className="ri-facebook-circle-fill text-xl"></i>
-                <span className="text-sm">@Sudip Acharya</span>
+                <span className="text-sm">Sudip Acharya</span>
               </a>
             </li>
             <li>
               <a className="flex items-center gap-1" href="https://www.instagram.com/sudipacharya.js/">
                 <i className="ri-instagram-fill text-xl"></i>
-                <span className="text-sm">@Sudip Acharya</span>
+                <span className="text-sm">Sudip Acharya</span>
               </a>
             </li>
             <li>
               <a className="flex items-center gap-1" href="https://x.com/drxking456">
                 <i className="ri-twitter-x-fill text-xl"></i>
-                <span className="text-sm">@Sudip Acharya</span>
+                <span className="text-sm">Sudip Acharya</span>
               </a>
             </li>
             <li>
               <a className="flex items-center gap-1" href="https://www.linkedin.com/in/sudip-acharya-937347281/">
                 <i className="ri-linkedin-box-fill text-xl"></i>
-                <span className="text-sm">@Sudip Acharya</span>
+                <span className="text-sm">Sudip Acharya</span>
               </a>
             </li>
           </ul>
