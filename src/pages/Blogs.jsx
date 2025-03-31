@@ -58,7 +58,7 @@ const Blogs = () => {
         ""
       )}
       {error ? <p>Error:{error.message}</p> : ""}
-      {data.map((hell, index) => (
+      {data?.map((hell, index) => (
         <li className="list-none" key={index}>
           <BlogCard
             headline={hell.headline}

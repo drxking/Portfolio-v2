@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 const Navbar = ({ isAdmin }) => {
+  let email = "drxking456@gmail.com"
   const [clicked, setClicked] = useState(false);
   useGSAP(() => {
     if (clicked) {
@@ -26,7 +27,7 @@ const Navbar = ({ isAdmin }) => {
 
   function handleCopy() {
     setClicked(true);
-    navigator.clipboard.writeText("xtre969@gmail.com");
+    navigator.clipboard.writeText(email);
   }
 
   const links = {
@@ -53,14 +54,15 @@ const Navbar = ({ isAdmin }) => {
             <h2 className="text-sm font-medium hidden md:flex">
               Let's Connect
             </h2>
-            <div className=" px-1 pl-5 py-1 rounded-full bg-[--solid-color] hidden md:flex">
-              <input
-                name="email"
-                readOnly
-                className="text-sm focus:outline-none pointer-events-none font-medium bg-transparent"
+            <div className=" px-1 pl-5 py-1 rounded-full bg-[--solid-color] items-center hidden md:flex">
+              <p
+                className="text-sm text-center px-2 focus:outline-none inline-block pointer-events-none font-medium bg-transparent"
                 type="text"
-                value={"xtre969@gmail.com"}
-              />
+              >
+                {
+                  email
+                }
+              </p>
               <button title="Copy Email" onClick={handleCopy}>
                 <i className="ri-file-copy-2-line bg-slate-400 text-[--text-color] p-1 rounded-full focus:outline-none relative ">
                   <div className="popup absolute h-full w-full opacity-0 scale-0 bg-blue-600 rounded-full top-0 left-0">
