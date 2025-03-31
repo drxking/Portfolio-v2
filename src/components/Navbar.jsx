@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 const Navbar = ({ isAdmin }) => {
-  let email = "drxking456@gmail.com"
+  let email = "xtre969@gmail.com"
   const [clicked, setClicked] = useState(false);
   useGSAP(() => {
     if (clicked) {
