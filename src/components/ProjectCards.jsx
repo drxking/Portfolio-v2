@@ -23,16 +23,15 @@ const ProjectCards = ({ handleOnClick, one, onLoad }) => {
     gsap.from(cards, {
       y: `100%`,
       rotateX: -70,
-      //   rotate: -15,
+        rotate: -15,
       duration: 0.7,
       scale: 0.7,
       ease: "power2",
-      //   opacity: 0,
       scrollTrigger: {
         trigger: card.current,
         start: "bottom 120%",
         end: "bottom 75%",
-        scrub: 1,
+        scrub: 1
       },
     });
   }, [loaded]);

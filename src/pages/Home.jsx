@@ -1,13 +1,16 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Skills from "../components/Skills";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Projects from "../components/Projects";
 import Respo from "../components/Respo";
 import { Helmet } from "react-helmet";
 import Form from "../components/Form";
+import useLenisSmoothScroll from "../utils/useLenisSmoothScroller";
 
 const Home = () => {
+  useLenisSmoothScroll()
+  
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   const handleImageLoad = () => {
     setIsImageLoaded(true);
@@ -33,6 +36,7 @@ const Home = () => {
       {isImageLoaded && <Skills />}
       {isImageLoaded && <Projects />}
       {isImageLoaded && <Form />}
+
     </div>
   );
 };

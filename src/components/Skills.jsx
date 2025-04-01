@@ -20,9 +20,7 @@ const skill = Object.entries({
   "fa-brands fa-linux":
     "I have basic Linux skills and aim to develop them further.",
   "fa-brands fa-github":
-    "I excel in GitHub repository management, collaboration, and version control.",
-  "fa-brands fa-docker":
-    "I have basic Docker skills, including containerization and deployment.",
+    "I excel in efficient version control for seamless collaboration.",
   "fa-solid fa-bezier-curve":
     "I excel in GSAP, creating dynamic and captivating animations.",
 });
@@ -36,14 +34,14 @@ const Skills = () => {
       tt.forEach((yy) => {
         gsap.from(yy, {
           opacity: 0,
-          y: `70%`,
-          scale: 0.7,
-          rotateX: -90,
-          duration: 0.4,
+          y: `50%`,
+          duration: 0.5,
+          filter:`blur(3px)`,
           scrollTrigger: {
             trigger: yy,
             start: "top bottom",
             end: "top 80%",
+            scrub:1
           },
         });
       });
@@ -53,6 +51,7 @@ const Skills = () => {
           opacity: 0,
           duration: 1.5,
           stagger:0.07,
+          filter:`blur(3px)`,
           scrollTrigger: {
             trigger: "#skills",
             start: `50% bottom`,
