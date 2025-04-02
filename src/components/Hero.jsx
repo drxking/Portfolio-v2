@@ -1,7 +1,5 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useState } from "react";
-
 const H1 = ({ cont, c }) => {
   return (
     <div style={{ perspective: "100px" }} className="h1-wrapper px-2">
@@ -17,53 +15,53 @@ const Hero = ({ onImageLoad }) => {
   useGSAP(() => {
     let widtht = window.innerWidth;
     if (widtht < 768) {
-        let gl = gsap.timeline({
-          repeat:-1,
-          repeatDelay:4
-        });
-        gl.to(".swipe", {
-          opacity: 1,
+      let gl = gsap.timeline({
+        repeat: -1,
+        repeatDelay: 4
+      });
+      gl.to(".swipe", {
+        opacity: 1,
+        duration: 0.2,
+      });
+      gl.to(
+        ".puchar",
+        {
+          width: 40,
+          duration: 0.5,
+          delay: 0.4,
+        },
+        "a"
+      );
+      gl.to(
+        ".swipe",
+        {
+          delay: 0.5,
+          x: -100,
+          duration: 0.5,
+        },
+        "a"
+      );
+      gl.to(
+        ".swipe",
+        {
+          delay: 0.5,
+          opacity: 0,
           duration: 0.2,
-        });
-        gl.to(
-          ".puchar",
-          {
-            width: 40,
-            duration: 0.5,
-            delay: 0.4,
-          },
-          "a"
-        );
-        gl.to(
-          ".swipe",
-          {
-            delay: 0.5,
-            x: -100,
-            duration: 0.5,
-          },
-          "a"
-        );
-        gl.to(
-          ".swipe",
-          {
-            delay: 0.5,
-            opacity: 0,
-            duration: 0.2,
-          },
-          "b"
-        );
-        gl.to(
-          ".puchar",
-          {
-            width: 0,
-          },
-          "b"
-        );
-        gl.to(".swipe", {
-          x: 100,
-          duration: 0,
-          delay: 0.2,
-        });
+        },
+        "b"
+      );
+      gl.to(
+        ".puchar",
+        {
+          width: 0,
+        },
+        "b"
+      );
+      gl.to(".swipe", {
+        x: 100,
+        duration: 0,
+        delay: 0.2,
+      });
     }
     let tl = gsap.timeline();
     tl.from(".h1-s", {
@@ -110,9 +108,11 @@ const Hero = ({ onImageLoad }) => {
         style={{ perspective: "100px" }}
         className="w-fit flex flex-col items-center "
       >
-        <H1 cont={"Junior"} />
-        <H1 cont={"FullStack"} />
-        <H1 c={true} cont={"Developer"} />
+        <div id="hello" className="flex flex-col items-center">
+          <H1 cont={"Junior"} />
+          <H1 cont={"FullStack"} />
+          <H1 c={true} cont={"Developer"} />
+        </div>
         <div className="details flex justify-between items-center w-full  px-2">
           <div>
             <p className="leading-tight  font-semibold  md:text-xs text-[10px]">
