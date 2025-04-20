@@ -23,7 +23,7 @@ const ProjectCards = ({ handleOnClick, one, onLoad }) => {
     gsap.from(cards, {
       y: `100%`,
       rotateX: -70,
-        rotate: -15,
+      rotate: -15,
       duration: 0.7,
       scale: 0.7,
       ease: "power2",
@@ -47,7 +47,7 @@ const ProjectCards = ({ handleOnClick, one, onLoad }) => {
           mob_image: one.mob_image,
           date: one.date,
           tech: one.tech,
-          alert:one.alert
+          alert: one.alert
         });
       }}
       key={one.site_url}

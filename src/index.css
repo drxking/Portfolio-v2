@@ -10,7 +10,7 @@
   --primary-color: #E4E5F1;
   --text-color: #000;
   --solid-color: #fff;
-  --form-input-color:#444;
+  --form-input-color: #444;
 }
 
 * {
@@ -19,38 +19,50 @@
   padding: 0;
   box-sizing: border-box;
 }
-*::-webkit-scrollbar{
+
+*::-webkit-scrollbar {
   display: none;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
-html::-webkit-scrollbar{
+
+html::-webkit-scrollbar {
   display: none;
   width: 8px;
 }
-html::-webkit-scrollbar-button{
+
+html::-webkit-scrollbar-button {
   display: none;
 }
-html::-webkit-scrollbar-thumb{
-  background:rgba(0, 0, 0, 0.329);
+
+html::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.329);
   border-radius: 20px;
 
 }
-html::-webkit-scrollbar-thumb:hover{
-  background:rgba(0, 0, 0, 0.700);
+
+html::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.700);
 
 }
 
-html::-webkit-scrollbar-track{
-  background:transparent;
+html::-webkit-scrollbar-track {
+  background: transparent;
 }
-.projects-popup::-webkit-scrollbar{
+
+.projects-popup::-webkit-scrollbar {
   display: none;
 }
+
 body {
   background-color: var(--primary-color);
   overflow-x: hidden;
 }
 
+
+
+.lenis-stopped {
+  overflow: hidden;
+}

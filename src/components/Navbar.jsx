@@ -14,13 +14,13 @@ const Navbar = ({ isAdmin }) => {
         opacity: 1,
         scale: 1,
         duration: 0.3,
-      }),
-        tl.to(".popup", {
-          opacity: 0,
-          scale: 0,
-          delay: 2,
-          duration: 0.3,
-        });
+      })
+      tl.to(".popup", {
+        opacity: 0,
+        scale: 0,
+        delay: 2,
+        duration: 0.3,
+      });
       setClicked(false);
     }
   }, [clicked]);

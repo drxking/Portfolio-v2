@@ -6,11 +6,7 @@ import Projects from "../components/Projects";
 import Respo from "../components/Respo";
 import { Helmet } from "react-helmet";
 import Form from "../components/Form";
-import useLenisSmoothScroll from "../utils/useLenisSmoothScroller";
-
 const Home = () => {
-  useLenisSmoothScroll()
-  
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   const handleImageLoad = () => {
     setIsImageLoaded(true);
@@ -26,10 +22,11 @@ const Home = () => {
       <Navbar />
       <Respo
         list={{
+          Home: "#",
           Skills: "#skills",
-          Projects: "#projects",
-          Contact: "#contact",
+          Work: "#projects",
           Blogs: "/blogs",
+          Contact: "#contact"
         }}
       />
       <Hero onImageLoad={handleImageLoad} />

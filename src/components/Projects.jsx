@@ -5,11 +5,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import project from "../assets/project.js";
 import ProjectCards from "./ProjectCards.jsx";
+import { useLenis } from "../utils/LenisProvider.jsx";
 
 const Projects = () => {
   let [clicks, setClicks] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  let lenisRef = useLenis();
   const handleImageLoad = () => {
     setCurrentIndex((prevIndex) => prevIndex + 1);
   };
@@ -17,7 +18,7 @@ const Projects = () => {
   const titleRef = useRef(null);
   const descRef = useRef(null);
   const siteUrlRef = useRef(null);
-  const deskImageRef = useRef(null); 
+  const deskImageRef = useRef(null);
   const dateRef = useRef(null);
   const techRef = useRef(null);
   const alertRef = useRef(null);
@@ -29,7 +30,7 @@ const Projects = () => {
         top: `0%`,
         duration: 0.5,
         ease: "power2",
-        delay:0.2
+        delay: 0.2
       });
     } else {
       gsap.to(popup.current, {
@@ -40,6 +41,7 @@ const Projects = () => {
   }, [clicks]);
 
   function handleOnClick({ title, desc, desk_image, date, tech, url, alert }) {
+    lenisRef.current?.stop();
     deskImageRef.current.src = desk_image;
     let clutter = "";
     tech.forEach((tec) => {
@@ -49,7 +51,7 @@ const Projects = () => {
     descRef.current.innerHTML = desc.split("\n").join("<br />");
     dateRef.current.innerHTML = date;
     alertRef.current.innerHTML = alert
-      ? `<div class="w-fit mb-4 text-xs font-semibold text-gray-400 flex items-center gap-2 border border-gray-700 rounded-xl backdrop-blur-[20px]  bg-black/50 p-2" ><i class="ri-error-warning-line text-red-500 text-2xl"></i> ${alert} </div>`
+      ? `<div class="w-fit mb-4 text-xs font-semibold text-gray-400 flex items-center gap-2 border border-gray-700 rounded-xl backdrop-blur-[20px]  bg-black/80 p-2" ><i class="ri-error-warning-line text-red-500 text-2xl"></i> ${alert} </div>`
       : "";
     techRef.current.innerHTML = clutter;
     if (url == "#") {
@@ -63,6 +65,7 @@ const Projects = () => {
     setClicks(true);
   }
   function handleCloseOnClick() {
+    lenisRef.current?.start();
     setClicks(false);
   }
   return (
@@ -83,9 +86,11 @@ const Projects = () => {
         ))}
       </div>
       <div
+        data-lenis-prevent
         ref={popup}
-        className=" flex flex-col justify-start items-center projects-popup w-full h-screen overflow-y-scroll fixed top-[100%]"
+        className=" flex flex-col justify-start z-[999999] overscroll-auto touch-auto items-center projects-popup w-full h-screen overflow-y-auto fixed top-[100%]"
       >
+
         <div className="w-full">
           <div
             onClick={handleCloseOnClick}
@@ -142,6 +147,7 @@ const Projects = () => {
           </div>
         </div>
       </div>
+
     </div>
   );
 };

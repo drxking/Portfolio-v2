@@ -3,6 +3,7 @@ import { Suspense, lazy, createContext, useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { MutatingDots } from "react-loader-spinner";
 import { DarkMode, LightMode } from "./utils/mode";
+import { LenisProvider } from "./utils/LenisProvider";
 const Home = lazy(() => import("./pages/Home"));
 const Blogs = lazy(() => import("./pages/Blogs"));
 const Blog = lazy(() => import("./pages/Blog"));
@@ -10,6 +11,7 @@ const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 const Admin = lazy(() => import("./pages/Admin"));
 const Edit = lazy(() => import("./pages/Edit"));
 const Create = lazy(() => import("./pages/Create"));
+
 
 
 export const ThemeContext = createContext(false);
@@ -57,7 +59,11 @@ const App = () => {
             }
           >
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={
+                <LenisProvider>
+                  <Home />
+                </LenisProvider>
+              } />
               <Route path="/blogs" element={<Blogs />} />
               <Route path="/blogs/:id" element={<Blog />} />
               <Route path="/login" element={<AdminLogin />} />
