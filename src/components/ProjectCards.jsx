@@ -6,6 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ProjectCards = ({ handleOnClick, one, onLoad }) => {
   const [loaded, setLoaded] = useState(false);
+  const [limeDesc, setLimeDesc] = useState("");
 
   useEffect(() => {
     if (loaded) {
@@ -35,6 +36,19 @@ const ProjectCards = ({ handleOnClick, one, onLoad }) => {
       },
     });
   }, [loaded]);
+
+
+  useEffect(() => {
+    // Create a temporary DOM element to parse the HTML string
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(one.desc, "text/html");
+
+    // Extract the text inside the <p> tag with class "lime-desc"
+    const limeDescElement = doc.querySelector("p.lime-desc");
+    if (limeDescElement) {
+      setLimeDesc(limeDescElement.innerText);
+    }
+  }, [one.desc]);
   return (
     <div
       ref={card}
@@ -71,8 +85,9 @@ const ProjectCards = ({ handleOnClick, one, onLoad }) => {
           </button>
         </div>
         <div className="desc line-clamp-2 text-xs px-2 opacity-65 tracking-wide">
-          {one.desc}
+          {limeDesc}
         </div>
+
       </div>
     </div>
   );

@@ -48,7 +48,7 @@ const Projects = () => {
       clutter += `<li class="text-xs bg-[--text-color] px-2 py-1 w-fit rounded-full text-[--primary-color]">${tec}</li>`;
     });
     titleRef.current.innerHTML = title;
-    descRef.current.innerHTML = desc.split("\n").join("<br />");
+    descRef.current.innerHTML = desc;
     dateRef.current.innerHTML = date;
     alertRef.current.innerHTML = alert
       ? `<div class="w-fit mb-4 text-xs font-semibold text-gray-400 flex items-center gap-2 border border-gray-700 rounded-xl backdrop-blur-[20px]  bg-black/80 p-2" ><i class="ri-error-warning-line text-red-500 text-2xl"></i> ${alert} </div>`
@@ -142,7 +142,7 @@ const Projects = () => {
             />
             <p
               ref={descRef}
-              className=" text-sm w-full mt-2 text-white opacity-75"
+              className="w-full mt-2 text-white opacity-75"
             ></p>
           </div>
         </div>
