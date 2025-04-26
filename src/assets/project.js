@@ -194,7 +194,7 @@ let project = [
 `,
         desk_image: "/projects/payment-desktop.png",
         mob_image: "/projects/fintory-mobile.jpg",
-        site_url: "https://payment-animation.vercel.app/",
+        site_url: "https://payment.sudipacharya456.com.np/",
         date: "Apr 2025",
         tech: ["HTML", "Tailwind CSS", "JavaScript", "GSAP"]
     },
@@ -494,7 +494,7 @@ let project = [
 `,
         desk_image: "/projects/wandergate-desktop.png",
         mob_image: "/projects/fintory-mobile.jpg",
-        site_url: "https://wanders-gates.vercel.app/",
+        site_url: "https://wanders.sudipacharya456.com.np/",
         date: "jun 2024",
         tech: ["HTML", "Tailwind CSS", "JavaScript", "GSAP", "Locomotive"]
     },
