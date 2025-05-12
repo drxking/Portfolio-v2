@@ -84,8 +84,8 @@ let project = [
   </footer>
 </section>
 `,
-        desk_image: "/projects/taara-clone-desktop.png",
-        mob_image: "/projects/fintory-mobile.jpg",
+        desk_image: "https://res.cloudinary.com/dgcpqppcd/image/upload/v1747063017/taara-clone-desktop_ysmqv8.png",
+        mob_image: "https://res.cloudinary.com/dgcpqppcd/image/upload/v1747063017/taara-clone-desktop_ysmqv8.png",
         site_url: "https://taara-clone.sudipacharya456.com.np/",
         date: "Apr 2025",
         tech: ["HTML", "Tailwind CSS", "JavaScript", "GSAP", "LenisJs", "Vite"]
@@ -192,8 +192,8 @@ let project = [
 </section>
 
 `,
-        desk_image: "/projects/payment-desktop.png",
-        mob_image: "/projects/fintory-mobile.jpg",
+        desk_image: "https://res.cloudinary.com/dgcpqppcd/image/upload/v1747063017/payment-desktop_gjf01o.png",
+        mob_image: "https://res.cloudinary.com/dgcpqppcd/image/upload/v1747063017/payment-desktop_gjf01o.png",
         site_url: "https://payment.sudipacharya456.com.np/",
         date: "Apr 2025",
         tech: ["HTML", "Tailwind CSS", "JavaScript", "GSAP"]
@@ -285,8 +285,8 @@ let project = [
 </section>
 
         `,
-        desk_image: "/projects/multiverse-desktop.png",
-        mob_image: "/projects/multiverse-mobile.jpg",
+        desk_image: "https://res.cloudinary.com/dgcpqppcd/image/upload/v1747063017/multiverse-desktop_y2ncep.png",
+        mob_image: "https://res.cloudinary.com/dgcpqppcd/image/upload/v1747063017/multiverse-desktop_y2ncep.png",
         site_url: "https://drxking.github.io/Multiverse/dist/",
         date: "2023-present",
         tech: ["HTML", "Css", "JavaScript", "LocomotiveJs", "GSAP"]
@@ -377,8 +377,8 @@ let project = [
 </section>
 
 `,
-        desk_image: "/projects/fintory-desktop.png",
-        mob_image: "/projects/fintory-mobile.jpg",
+        desk_image: "https://res.cloudinary.com/dgcpqppcd/image/upload/v1747063016/fintory-desktop_nkxvat.png",
+        mob_image: "https://res.cloudinary.com/dgcpqppcd/image/upload/v1747063016/fintory-desktop_nkxvat.png",
         site_url: "https://drxking.github.io/Fintory/",
         date: "2022-2023",
         tech: ["HTML", "Css", "JavaScript", "LocomotiveJs", "GSAP"]
@@ -492,8 +492,8 @@ let project = [
   </footer>
 </section>
 `,
-        desk_image: "/projects/wandergate-desktop.png",
-        mob_image: "/projects/fintory-mobile.jpg",
+        desk_image: "https://res.cloudinary.com/dgcpqppcd/image/upload/v1747063017/wandergate-desktop_siuvhz.png",
+        mob_image: "https://res.cloudinary.com/dgcpqppcd/image/upload/v1747063017/wandergate-desktop_siuvhz.png",
         site_url: "https://wanders.sudipacharya456.com.np/",
         date: "jun 2024",
         tech: ["HTML", "Tailwind CSS", "JavaScript", "GSAP", "Locomotive"]

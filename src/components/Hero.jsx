@@ -134,7 +134,7 @@ const Hero = ({ onImageLoad }) => {
         <div className="image origin-tops scale-[0.9] md:w-96 w-full max-w-80 mt-10 overflow-hidden  rounded-3xl">
           <img
             onLoad={onImageLoad}
-            src="photo.jpg"
+            src="https://res.cloudinary.com/dgcpqppcd/image/upload/v1747062833/photo_ggf8zf.jpg"
             alt="sudip acharya"
             className=" w-full shadow-xl scale-150 origin-bottom"
             loading="lazy"
