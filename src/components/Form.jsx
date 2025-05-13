@@ -51,6 +51,7 @@ const Form = () => {
                 First name
               </label>
               <input
+                required
                 placeholder="Jane"
                 className=" bg-[--form-input-color] rounded-md focus:outline-none px-4 py-2 text-sm"
                 type="text"
@@ -63,6 +64,7 @@ const Form = () => {
                 Last name
               </label>
               <input
+                required
                 placeholder="Foster"
                 className=" bg-[--form-input-color] rounded-md focus:outline-none px-4 py-2 text-sm"
                 type="text"
@@ -76,6 +78,7 @@ const Form = () => {
               Email
             </label>
             <input
+            required
               placeholder="fosterjane@gmail.com"
               className=" bg-[--form-input-color] rounded-md focus:outline-none px-4 py-2 text-sm"
               type="email"
@@ -89,6 +92,7 @@ const Form = () => {
             </label>
 
             <select
+            required
               id="countries"
               name="country"
               className="text-sm bg-[--form-input-color] rounded-md focus:outline-none px-4 py-2 "
@@ -104,6 +108,7 @@ const Form = () => {
               Message
             </label>
             <textarea
+              required
               name="message"
               id="message"
               className="bg-[--form-input-color]  rounded-md w-full h-36 focus:outline-none px-4 py-2 text-sm resize-none"
@@ -113,7 +118,7 @@ const Form = () => {
           <input
             type="submit"
             value="Send Message"
-            className="py-2 rounded-md w-full bg-blue-500 text-white"
+            className="py-2 rounded-md w-full cursor-pointer bg-blue-500 text-white"
           />
         </form>
       </div>
