@@ -9,6 +9,8 @@ const skill = Object.entries({
     "JavaScript knowledge of Mine allows basic web interactivity and functionality development.",
   "ri-nodejs-fill":
     "I have a solid grasp of Node.js and am eager to push my skills further.",
+  "fa-brands fa-react":
+    "I bring ideas to life through interactive, component-driven magic with React.",
   "ri-tailwind-css-fill":
     "I've got a knack for Tailwind CSS and I'm keen to polish my skills.",
   "ri-html5-fill":
@@ -23,6 +25,8 @@ const skill = Object.entries({
     "I excel in efficient version control for seamless collaboration.",
   "fa-solid fa-bezier-curve":
     "I excel in GSAP, creating dynamic and captivating animations.",
+  "fa-brands fa-react":
+    "I bring ideas to life through interactive, component-driven magic with React.",
 });
 
 const Skills = () => {
