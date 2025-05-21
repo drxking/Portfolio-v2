@@ -24,9 +24,7 @@ const skill = Object.entries({
   "fa-brands fa-github":
     "I excel in efficient version control for seamless collaboration.",
   "fa-solid fa-bezier-curve":
-    "I excel in GSAP, creating dynamic and captivating animations.",
-  "fa-brands fa-react":
-    "I bring ideas to life through interactive, component-driven magic with React.",
+    "I excel in GSAP, creating dynamic and captivating animations."
 });
 
 const Skills = () => {
