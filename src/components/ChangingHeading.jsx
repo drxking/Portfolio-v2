@@ -34,15 +34,15 @@ const ChangingHeading = ({ mainHeading, subHeading }) => {
             scale: 0.8,
             ease: "power2.inOut",
             filter: `blur(3px)`,
-        }, "b"),
-            tl.to(".animator3", {
-                top: `0%`,
-                duration: 0.7,
-                delay: 1,
-                scale: 1,
-                ease: "power2.inOut",
-                filter: `blur(0px)`,
-            }, "b")
+        }, "b")
+        tl.to(".animator3", {
+            top: `0%`,
+            duration: 0.7,
+            delay: 1,
+            scale: 1,
+            ease: "power2.inOut",
+            filter: `blur(0px)`,
+        }, "b")
         gsap.set(".animator3", {
             scale: 0.8,
             filter: `blur(3px)`,
