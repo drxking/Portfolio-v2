@@ -16,7 +16,7 @@ const Home = () => {
     <div className="lg:px-20 md:px-10 px-4 text-[--text-color] duration-300 overflow-x-hidden">
       <Helmet>
         <title>
-          Sudip Acharya
+          Sudip Acharya | Full Stack Developer 
         </title>
       </Helmet>
       <Navbar />

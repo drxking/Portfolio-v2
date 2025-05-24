@@ -64,8 +64,16 @@ const App = () => {
                   <Home />
                 </LenisProvider>
               } />
-              <Route path="/blogs" element={<Blogs />} />
-              <Route path="/blogs/:id" element={<Blog />} />
+              <Route path="/blogs" element={
+                <LenisProvider>
+                  <Blogs />
+                </LenisProvider>
+              } />
+              <Route path="/blogs/:id" element={
+                <LenisProvider>
+                  <Blog />
+                </LenisProvider>
+              } />
               <Route path="/login" element={<AdminLogin />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/edit/:id" element={<Edit />} />
