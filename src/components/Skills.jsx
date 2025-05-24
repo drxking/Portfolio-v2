@@ -66,7 +66,7 @@ const Skills = () => {
     }
   }, []);
 
-  
+
 
   return (
     <div
@@ -80,9 +80,9 @@ const Skills = () => {
       </div>
       <ul className="flex  flex-1 gap-8 flex-wrap justify-center">
         {skill.map(([icons, desc]) => (
-          <li key={desc} style={{ perspective: "300px" }}>
-            <div className="ind w-52 flex flex-col items-center gap-6 origin-top ">
-              <i className={`${icons} text-[80px] leading-none h-24`}></i>
+          <li key={desc}  style={{ perspective: "300px" }}>
+            <div className="ind  w-52 flex flex-col  items-center gap-6 origin-top ">
+              <i className={`${icons}  text-[80px]  leading-none h-24`}></i>
               <p className="text-center text-sm ">{desc}</p>
             </div>
           </li>
