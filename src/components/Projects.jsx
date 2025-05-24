@@ -6,6 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 import project from "../assets/project.js";
 import ProjectCards from "./ProjectCards.jsx";
 import { useLenis } from "../utils/LenisProvider.jsx";
+import ChangingHeading from "./ChangingHeading.jsx";
 
 const Projects = () => {
   let [clicks, setClicks] = useState(false);
@@ -69,8 +70,8 @@ const Projects = () => {
     setClicks(false);
   }
   return (
-    <div id="projects" className="flex flex-col items-center mb-32">
-      <h1 className="text-3xl font-semibold w-full md:w-fit">Projects</h1>
+    <div id="projects" className="flex flex-col items-center pt-10 mb-32">
+      <ChangingHeading mainHeading={"Projects"} subHeading={"That Makes me Unique!"} />
 
       <div
         ref={projects}

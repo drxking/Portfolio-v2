@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import React, { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ChangingHeading from "./ChangingHeading";
 gsap.registerPlugin(ScrollTrigger);
 
 const skill = Object.entries({
@@ -53,10 +54,10 @@ const Skills = () => {
           opacity: 0,
           duration: 1.5,
           stagger:0.07,
-          filter:`blur(3px)`,
+          filter:`blur(7px)`,
           scrollTrigger: {
             trigger: "#skills",
-            start: `50% bottom`,
+            start: `40% bottom`,
             end:"bottom 70%",
             // markers:true,
             scrub:1
@@ -65,13 +66,18 @@ const Skills = () => {
     }
   }, []);
 
+  
+
   return (
     <div
       ref={refff}
       id="skills"
-      className="mb-32 flex flex-col items-center pt-16 mt-2"
+      className="mb-32 flex flex-col items-center pt-10 mt-2"
     >
-      <h1 className="text-3xl font-semibold mb-10 ">Skills</h1>
+      <div className="w-full mb-20 md:pl-16">
+
+        <ChangingHeading mainHeading={"Skills"} subHeading={"That Matters"} />
+      </div>
       <ul className="flex  flex-1 gap-8 flex-wrap justify-center">
         {skill.map(([icons, desc]) => (
           <li key={desc} style={{ perspective: "300px" }}>
