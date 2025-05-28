@@ -24,18 +24,18 @@ const Respo = ({list}) => {
       window.addEventListener("touchmove", (cets) => {
         let end = cets.changedTouches[0].screenX;
         let endY = cets.changedTouches[0].screenY;
-        if (endY - startY >= 20 || endY - startY <= -20) {
+        if (endY - startY >= 15 || endY - startY <= -15) {
           if (!XX) {
             YY = true;
           }
         }
         if (!YY) {
-          if (end - startX >= 60) {
+          if (end - startX >= 15) {
             XX = true;
             setswiped(false);
             document.body.style.overflow = `hidden`;
             startX = cets.changedTouches[0].screenX;
-          } else if (end - startX <= -60) {
+          } else if (end - startX <= -15) {
             XX = true;
             setswiped(true);
             document.body.style.overflow = `hidden`;
