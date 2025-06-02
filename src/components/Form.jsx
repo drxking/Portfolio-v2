@@ -3,7 +3,7 @@ import Options from "./Options";
 
 const Form = () => {
   return (
-    <div id="contact" className="h-fit flex-col-reverse lg:flex-row  w-full flex gap-4 my-8">
+    <div id="contact" className="h-fit flex-col-reverse lg:flex-row  w-full flex gap-4 my-4">
       <div className="right flex flex-row lg:flex-col p-4 justify-between w-full lg:w-[20%] rounded-lg bg-[--solid-color] bg-[url(https://accessibe.com/media/impact/hero.png)] bg-cover bg-left">
         <div className="top text-lg font-semibold">SudipAcharya.</div>
         <div className="bottom">

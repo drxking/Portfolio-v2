@@ -6,6 +6,7 @@ import Projects from "../components/Projects";
 import Respo from "../components/Respo";
 import { Helmet } from "react-helmet";
 import Form from "../components/Form";
+import LinuxIsBest from "../components/LinuxIsBest";
 const Home = () => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   const handleImageLoad = () => {
@@ -16,7 +17,7 @@ const Home = () => {
     <div className="lg:px-20 md:px-10 px-4 text-[--text-color] duration-300 overflow-x-hidden">
       <Helmet>
         <title>
-          Sudip Acharya | Full Stack Developer 
+          Sudip Acharya | Full Stack Developer
         </title>
       </Helmet>
       <Navbar />
@@ -33,7 +34,7 @@ const Home = () => {
       {isImageLoaded && <Skills />}
       {isImageLoaded && <Projects />}
       {isImageLoaded && <Form />}
-
+      <LinuxIsBest />
     </div>
   );
 };

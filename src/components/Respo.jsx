@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import  { useEffect, useState } from "react";
 import Links from "./Links";
 import H1logo from "./H1logo";
 import { useGSAP } from "@gsap/react";
