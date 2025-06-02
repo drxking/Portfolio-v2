@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Options from "./Options";
 
 const Form = () => {
@@ -36,9 +35,9 @@ const Form = () => {
         </div>
       </div>
       <div className="left h-full w-full lg:w-[80%] rounded-lg bg-[--solid-color] flex flex-col pt-5 lg:px-44 md:px-24 px-5">
-        <h1 className="text-2xl font-semibold">I'd love to help</h1>
+        <h1 className="text-2xl font-semibold">I&#39;d love to help</h1>
         <p className="text-sm">
-          Reach out and i'll get in touch as soon as possible
+          Reach out and i&#39;ll get in touch as soon as possible
         </p>
         <form
           action="https://formspree.io/f/mkgwladb"

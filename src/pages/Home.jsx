@@ -34,7 +34,7 @@ const Home = () => {
       {isImageLoaded && <Skills />}
       {isImageLoaded && <Projects />}
       {isImageLoaded && <Form />}
-      <LinuxIsBest />
+      {isImageLoaded && <LinuxIsBest />}
     </div>
   );
 };
