@@ -1,5 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import Links from "./Links";
 const H1 = ({ cont, c }) => {
   return (
     <div style={{ perspective: "100px" }} className="h1-wrapper px-2">
@@ -75,6 +76,7 @@ const Hero = ({ onImageLoad }) => {
     });
     tl.from(".details", {
       opacity: 0,
+      stagger:0.3
     });
     tl.from(".image", {
       x: `100%`,
@@ -129,6 +131,9 @@ const Hero = ({ onImageLoad }) => {
             Download Resume
           </a>
         </div>
+       <div className="mt-5 scale-90 md:scale-75 details">
+         <Links hiddens={true}/>
+       </div>
       </div>
       <div style={{ perspective: "700px" }}>
         <div className="image origin-tops scale-[0.9] md:w-96 w-full max-w-80 mt-10 overflow-hidden  rounded-3xl">

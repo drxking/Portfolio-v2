@@ -25,37 +25,37 @@ let project = [
     <h2 class="text-xl font-semibold  mb-4">Key Features</h2>
     <ul class="space-y-6">
       <li>
-        <h3 class="text-base font-medium ">Seamless Animations with GSAP</h3>
+        <h3 class="text-base font-medium font-[oswald]">- Seamless Animations with GSAP</h3>
         <p class="text-sm ">
           Taara uses GSAP to create fluid animations throughout the site, ensuring that user interactions feel smooth and dynamic.
         </p>
       </li>
       <li>
-        <h3 class="text-base font-medium ">Smooth Scrolling with Lenis</h3>
+        <h3 class="text-base font-medium font-[oswald]">- Smooth Scrolling with Lenis</h3>
         <p class="text-sm ">
           Lenis is integrated to provide a smooth, scroll-driven experience that makes navigating the website feel natural and immersive.
         </p>
       </li>
       <li>
-        <h3 class="text-base font-medium ">Tailwind CSS for Responsive Design</h3>
+        <h3 class="text-base font-medium font-[oswald]">- Tailwind CSS for Responsive Design</h3>
         <p class="text-sm ">
           The use of Tailwind CSS ensures that Taara is fully responsive, with a layout that adapts perfectly to all screen sizes, from desktop to mobile.
         </p>
       </li>
       <li>
-        <h3 class="text-base font-medium ">Interactive User Interface</h3>
+        <h3 class="text-base font-medium font-[oswald]">- Interactive User Interface</h3>
         <p class="text-sm ">
           The project incorporates interactive elements, such as hover effects and scroll-triggered animations, to engage users and enhance the experience.
         </p>
       </li>
       <li>
-        <h3 class="text-base font-medium ">Minimalist Aesthetic</h3>
+        <h3 class="text-base font-medium font-[oswald]">- Minimalist Aesthetic</h3>
         <p class="text-sm ">
           The design follows a minimalist approach with ample white space and clear typography, ensuring that content remains the focal point.
         </p>
       </li>
       <li>
-        <h3 class="text-base font-medium ">High-Performance</h3>
+        <h3 class="text-base font-medium font-[oswald]">- High-Performance</h3>
         <p class="text-sm ">
           By optimizing animations and interactions, Taara provides smooth performance with fast load times and minimal latency.
         </p>
@@ -63,18 +63,7 @@ let project = [
     </ul>
   </section>
 
-  <!-- Technologies Used -->
-  <section class="mb-12">
-    <h2 class="text-xl font-semibold  mb-4">Technologies Used</h2>
-    <ul class="list-disc list-inside space-y-2 text-sm ">
-      <li><strong>HTML5:</strong> Provides the semantic structure for the content and layout.</li>
-      <li><strong>CSS3:</strong> Used for styling and implementing responsive design.</li>
-      <li><strong>JavaScript:</strong> Powers the interactivity and dynamic behaviors of the site.</li>
-      <li><strong>GSAP:</strong> Responsible for creating smooth animations and transitions.</li>
-      <li><strong>Lenis:</strong> Implements smooth, scroll-based animations and fluid scrolling behavior.</li>
-      <li><strong>Tailwind CSS:</strong> A utility-first CSS framework that helps with quick and flexible styling and responsiveness.</li>
-    </ul>
-  </section>
+ 
 
   <!-- Conclusion -->
   <footer class="border-t pt-6 mt-12">
@@ -106,82 +95,40 @@ let project = [
   <!-- Key Features -->
   <section class="mb-12">
     <h2 class="text-xl font-semibold mb-4">Key Features</h2>
-    <div class="space-y-6">
-      <div>
-        <h3 class="text-base font-medium">Swipe to Pay Animation</h3>
+    <ol type="1" class="space-y-6">
+      <li>
+        <h3 class="text-base font-medium font-[oswald]">- Swipe to Pay Animation</h3>
         <p class="text-sm">
           Mimics real-world gestures with intuitive swiping animations for a natural, mobile-inspired payment flow.
         </p>
-      </div>
-      <div>
-        <h3 class="text-base font-medium">Seamless Transitions</h3>
+      </li>
+      <li>
+        <h3 class="text-base font-medium font-[oswald]">- Seamless Transitions</h3>
         <p class="text-sm">
           Transitions are smooth and responsive thanks to GSAP and CSS, creating a polished interface experience.
         </p>
-      </div>
-      <div>
-        <h3 class="text-base font-medium">Interactive Feedback</h3>
+      </li>
+      <li>
+        <h3 class="text-base font-medium font-[oswald]">- Interactive Feedback</h3>
         <p class="text-sm">
           Real-time success states, loaders, and animations provide clarity and reinforce user confidence.
         </p>
-      </div>
-      <div>
-        <h3 class="text-base font-medium">Minimalist UI</h3>
+      </li>
+      <li>
+        <h3 class="text-base font-medium font-[oswald]">- Minimalist UI</h3>
         <p class="text-sm">
           The clean layout prioritizes actions, enhances readability, and eliminates distractions with utility-first Tailwind styling.
         </p>
-      </div>
-      <div>
-        <h3 class="text-base font-medium">Fully Responsive</h3>
+      </li>
+      <li>
+        <h3 class="text-base font-medium font-[oswald]">- Fully Responsive</h3>
         <p class="text-sm">
           Mobile-first layout ensures a consistent experience across all screen sizes—from phones to desktops.
         </p>
-      </div>
-    </div>
+      </li>
+    </ol>
   </section>
 
-  <!-- Tech Stack -->
-  <section class="mb-12">
-    <h2 class="text-xl font-semibold mb-4">Technologies Used</h2>
-    <ul class="list-disc list-inside space-y-2 text-sm">
-      <li><strong>HTML:</strong> Semantic structure and layout.</li>
-      <li><strong>Tailwind CSS:</strong> Utility-first styling for rapid, responsive design.</li>
-      <li><strong>JavaScript:</strong> DOM interaction and animation triggers.</li>
-      <li><strong>GSAP:</strong> Smooth animation library for swipe gestures and UI transitions.</li>
-      <li><strong>CSS Keyframes:</strong> Subtle micro-interactions and polish.</li>
-    </ul>
-  </section>
-
-  <!-- Implementation -->
-  <section class="mb-12">
-    <h2 class="text-xl font-semibold mb-4">Implementation Details</h2>
-    <div class="space-y-6">
-      <div>
-        <h3 class="text-base font-medium">Markup & Structure</h3>
-        <p class="text-sm">
-          The layout uses semantic HTML5 elements to organize content and enhance accessibility.
-        </p>
-      </div>
-      <div>
-        <h3 class="text-base font-medium">Styling Approach</h3>
-        <p class="text-sm">
-          Tailwind CSS is used extensively for consistency, rapid development, and responsive scaling.
-        </p>
-      </div>
-      <div>
-        <h3 class="text-base font-medium">Gesture Integration</h3>
-        <p class="text-sm">
-          Swipes and drag events are detected with JavaScript, triggering animated transitions via GSAP.
-        </p>
-      </div>
-      <div>
-        <h3 class="text-base font-medium">Mobile Optimization</h3>
-        <p class="text-sm">
-          All interactions and visuals are tailored to touch devices, with fluid animations and responsive controls.
-        </p>
-      </div>
-    </div>
-  </section>
 
   <!-- Footer -->
   <footer class="border-t pt-6">
@@ -225,37 +172,37 @@ let project = [
     <h2 class="text-xl font-semibold  mb-4">Key Features</h2>
     <ul class="space-y-6">
       <li>
-        <h3 class="text-base font-medium ">Smooth Scrolling with LocoMotive.js</h3>
+        <h3 class="text-base font-medium font-[oswald] "- >Smooth Scrolling with LocoMotive.js</h3>
         <p class="text-sm ">
           Multiverse implements LocoMotive.js to deliver smooth, seamless scrolling, enhancing the navigation experience and providing users with a fluid and uninterrupted browsing journey.
         </p>
       </li>
       <li>
-        <h3 class="text-base font-medium ">Seamless Animations with GSAP</h3>
+        <h3 class="text-base font-medium font-[oswald]">- Seamless Animations with GSAP</h3>
         <p class="text-sm ">
           Every element in Multiverse comes to life with well-timed animations powered by GSAP, offering visually appealing transitions that enhance interactivity and guide users through the content.
         </p>
       </li>
       <li>
-        <h3 class="text-base font-medium ">Modern Web Technologies</h3>
+        <h3 class="text-base font-medium font-[oswald]">- Modern Web Technologies</h3>
         <p class="text-sm ">
           Built using cutting-edge web technologies, Multiverse ensures a visually impressive design while maintaining high performance across various devices and browsers.
         </p>
       </li>
       <li>
-        <h3 class="text-base font-medium ">Responsive Design</h3>
+        <h3 class="text-base font-medium font-[oswald]">- Responsive Design</h3>
         <p class="text-sm ">
           Multiverse is fully responsive, adapting seamlessly to different screen sizes to ensure a consistent and enjoyable user experience on desktops, tablets, and mobile devices.
         </p>
       </li>
       <li>
-        <h3 class="text-base font-medium ">Intuitive User Interface</h3>
+        <h3 class="text-base font-medium font-[oswald]">- Intuitive User Interface</h3>
         <p class="text-sm ">
           The design is minimalist and user-centric, offering a clean, intuitive interface that makes navigation simple, while prioritizing content accessibility.
         </p>
       </li>
       <li>
-        <h3 class="text-base font-medium ">Engaging Content Presentation</h3>
+        <h3 class="text-base font-medium font-[oswald]">- Engaging Content Presentation</h3>
         <p class="text-sm ">
           The content is presented with an emphasis on readability and user engagement, combining well-chosen typography, color schemes, and interactive elements.
         </p>
@@ -263,18 +210,7 @@ let project = [
     </ul>
   </section>
 
-  <!-- Technologies Used -->
-  <section class="mb-12">
-    <h2 class="text-xl font-semibold  mb-4">Technologies Used</h2>
-    <ul class="list-disc list-inside space-y-2 text-sm ">
-      <li><strong>HTML5:</strong> Provides the structure and semantic elements for a well-organized website.</li>
-      <li><strong>CSS3:</strong> Used for styling, animations, and implementing the layout techniques.</li>
-      <li><strong>JavaScript:</strong> Powers the interactive elements and enhances user engagement.</li>
-      <li><strong>LocoMotive.js:</strong> Implements smooth, inertia-based scrolling effects for a fluid navigation experience.</li>
-      <li><strong>GSAP:</strong> Powers smooth and responsive animations across the site.</li>
-      <li><strong>Other Frameworks:</strong> Used for additional features and cross-platform compatibility.</li>
-    </ul>
-  </section>
+
 
   <!-- Conclusion -->
   <footer class="border-t pt-6 mt-12">
@@ -317,37 +253,37 @@ let project = [
     <h2 class="text-xl font-semibold mb-4">Key Features</h2>
     <ul class="space-y-6">
       <li>
-        <h3 class="text-base font-medium">Minimalist Layout</h3>
+        <h3 class="text-base font-medium font-[oswald]">- Minimalist Layout</h3>
         <p class="text-sm">
           Fintory's design emphasizes simplicity and clarity with clean lines, generous white space, and an intuitive structure—keeping the user’s focus on the content.
         </p>
       </li>
       <li>
-        <h3 class="text-base font-medium">Smooth Scrolling with LocoMotive.js</h3>
+        <h3 class="text-base font-medium font-[oswald]">- Smooth Scrolling with LocoMotive.js</h3>
         <p class="text-sm">
           Leveraging LocoMotive.js, Fintory delivers fluid scrolling effects that enhance navigation and make content flow naturally.
         </p>
       </li>
       <li>
-        <h3 class="text-base font-medium">Engaging Animations with GSAP</h3>
+        <h3 class="text-base font-medium font-[oswald]">- Engaging Animations with GSAP</h3>
         <p class="text-sm">
           Subtle, responsive animations powered by GSAP guide users smoothly through the interface, increasing engagement without overwhelming the experience.
         </p>
       </li>
       <li>
-        <h3 class="text-base font-medium">Responsive Design</h3>
+        <h3 class="text-base font-medium font-[oswald]">- Responsive Design</h3>
         <p class="text-sm">
           The layout adapts effortlessly across screen sizes, ensuring accessibility and visual consistency on desktops, tablets, and mobile devices.
         </p>
       </li>
       <li>
-        <h3 class="text-base font-medium">Intuitive User Interface</h3>
+        <h3 class="text-base font-medium font-[oswald]">- Intuitive User Interface</h3>
         <p class="text-sm">
           With a focus on usability, the interface is simple and user-friendly, allowing for effortless navigation and content discovery.
         </p>
       </li>
       <li>
-        <h3 class="text-base font-medium">High-Performance</h3>
+        <h3 class="text-base font-medium font-[oswald]">- High-Performance</h3>
         <p class="text-sm">
           Built with modern tools, Fintory ensures quick load times and smooth interactions, providing a frustration-free user journey.
         </p>
@@ -355,18 +291,7 @@ let project = [
     </ul>
   </section>
 
-  <!-- Technologies Used -->
-  <section class="mb-12">
-    <h2 class="text-xl font-semibold mb-4">Technologies Used</h2>
-    <ul class="list-disc list-inside space-y-2 text-sm">
-      <li><strong>HTML5:</strong> Semantic structure for well-organized content.</li>
-      <li><strong>CSS3:</strong> Styling and responsive layout techniques.</li>
-      <li><strong>JavaScript:</strong> Enhancing interactivity and user engagement.</li>
-      <li><strong>LocoMotive.js:</strong> For smooth, inertia-based scrolling experiences.</li>
-      <li><strong>GSAP:</strong> Responsive and fluid animations across the UI.</li>
-      <li><strong>Other Frameworks:</strong> Additional libraries for compatibility and enhancement.</li>
-    </ul>
-  </section>
+
 
   <!-- Conclusion -->
   <footer class="border-t pt-6 mt-12">
@@ -409,25 +334,25 @@ let project = [
     <h2 class="text-xl font-semibold mb-4">Key Features</h2>
     <ul class="space-y-6">
       <li>
-        <h3 class="text-base font-medium">Seamless Scrolling</h3>
+        <h3 class="text-base font-medium font-[oswald]">- Seamless Scrolling</h3>
         <p class="text-sm">
           Utilizing LocoMotive.js, the website offers smooth and fluid scrolling effects. This enhances the browsing experience, making it more immersive and enjoyable for users.
         </p>
       </li>
       <li>
-        <h3 class="text-base font-medium">Advanced Animations</h3>
+        <h3 class="text-base font-medium font-[oswald]">- Advanced Animations</h3>
         <p class="text-sm">
           GSAP is employed to create intricate animations, including scroll-triggered animations, mouse movement effects, and other interactive elements. These animations add a dynamic and modern touch to the website.
         </p>
       </li>
       <li>
-        <h3 class="text-base font-medium">Interactive Elements</h3>
+        <h3 class="text-base font-medium font-[oswald]">- Interactive Elements</h3>
         <p class="text-sm">
           JavaScript is used to add interactivity such as hover effects, clickable components, and user-triggered actions that make the site more engaging.
         </p>
       </li>
       <li>
-        <h3 class="text-base font-medium">Modern Aesthetics</h3>
+        <h3 class="text-base font-medium font-[oswald]">- Modern Aesthetics</h3>
         <p class="text-sm">
           The design is minimalist and clean, focused on visual storytelling. Tailwind CSS ensures a stylish, responsive layout with cohesive colors and typography.
         </p>
@@ -435,54 +360,7 @@ let project = [
     </ul>
   </section>
 
-  <!-- Technologies Used -->
-  <section class="mb-12">
-    <h2 class="text-xl font-semibold mb-4">Technologies Used</h2>
-    <ul class="list-disc list-inside space-y-2 text-sm">
-      <li><strong>HTML:</strong> Structuring the content and layout of the website.</li>
-      <li><strong>Tailwind CSS:</strong> Styling with a utility-first approach for responsiveness and customization.</li>
-      <li><strong>JavaScript:</strong> Adding interactivity and user-driven actions.</li>
-      <li><strong>GSAP:</strong> Creating smooth, performant animations and transitions.</li>
-      <li><strong>LocoMotive.js:</strong> Implementing smooth, scroll-based animations and experiences.</li>
-    </ul>
-  </section>
 
-  <!-- Implementation Details -->
-  <section class="mb-12">
-    <h2 class="text-xl font-semibold mb-4">Implementation Details</h2>
-    <ul class="space-y-6">
-      <li>
-        <h3 class="text-base font-medium">HTML Structure</h3>
-        <p class="text-sm">
-          Organized and semantic markup forms the base of the site, making it accessible and easy to maintain.
-        </p>
-      </li>
-      <li>
-        <h3 class="text-base font-medium">Tailwind CSS Styling</h3>
-        <p class="text-sm">
-          Tailwind’s utility classes are used for layout, spacing, color, and typography, enabling rapid and consistent styling.
-        </p>
-      </li>
-      <li>
-        <h3 class="text-base font-medium">JavaScript Interactivity</h3>
-        <p class="text-sm">
-          Custom JS handles user interactions like mouse movement, hover states, and event-based logic for triggering animations.
-        </p>
-      </li>
-      <li>
-        <h3 class="text-base font-medium">GSAP Animations</h3>
-        <p class="text-sm">
-          GSAP powers the dynamic elements with scroll-based and timeline animations, delivering a high-end feel.
-        </p>
-      </li>
-      <li>
-        <h3 class="text-base font-medium">LocoMotive.js Scrolling</h3>
-        <p class="text-sm">
-          Integrated for smooth scroll behavior, it adds a layer of modern, immersive interaction essential for animation-heavy layouts.
-        </p>
-      </li>
-    </ul>
-  </section>
 
   <!-- Footer -->
   <footer class="border-t pt-6 mt-12">

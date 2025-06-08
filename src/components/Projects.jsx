@@ -99,11 +99,11 @@ const Projects = () => {
           ></div>
         </div>
         <div className="flex flex-col w-full items-center rounded-t-[35px] md:rounded-t-[50px]  bg-[--primary-alpha-color] backdrop-brightness-[35%] border-t border-gray-600/50 backdrop-blur-[25px] py-7 px-4 md:px-7  ">
-          <div className="w-full md:w-[80%]  flex justify-between mt-5  md:mt-10">
+          <div className="w-full md:w-[80%]  flex justify-between mt-5 ">
             <div className=" mb-4 ">
               <h1
                 ref={titleRef}
-                className="md:text-[50px] text-[8.5vw] leading-tight font-medium text-white "
+                className="md:text-[50px] text-[8.5vw] leading-tight py-2 text-white "
               ></h1>
               <p
                 ref={dateRef}

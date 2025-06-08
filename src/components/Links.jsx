@@ -10,10 +10,10 @@ const social = Object.entries({
   "ri-threads-fill": "https://www.threads.net/@sudipacharya.js",
 });
 
-const Links = () => {
+const Links = ({hiddens}) => {
   return (
     <div className="links">
-      <p className="text-sm">Connect with Me Through:</p>
+      <p className={hiddens?"text-sm hidden":"text-sm"}>Connect with Me Through:</p>
       <div className="flex gap-2">
         {social.map(([classes, links]) => (
           <a key={classes} href={links}>
