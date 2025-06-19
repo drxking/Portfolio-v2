@@ -124,7 +124,7 @@ const Hero = ({ onImageLoad }) => {
             </p>
           </div>
           <a
-            href="/My Resume.pdf"
+            href="/Sudip_Acharya_Resume.pdf"
             download={"Sudip-Acharya-Resume"}
             className="text-[--text-color] md:text-xs text-[10px] font-medium bg-[--solid-color] py-2 px-4  rounded-full"
           >
