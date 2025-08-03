@@ -80,7 +80,7 @@ const Skills = () => {
       <ul className="flex  flex-1 gap-8 gap-y-20 flex-wrap justify-center">
         {skill.map(([icons, desc]) => (
           <li key={desc} style={{ perspective: "300px" }}>
-            <div className="ind  w-48 flex flex-col  items-center gap-6 origin-top ">
+            <div className="ind  md:w-48 w-64 flex flex-col  items-center gap-6 origin-top ">
               <img src={`/skillsIcons/${icons}`} className="h-20" />
               <p className="text-center font-medium text-sm uppercase">{desc}</p>
             </div>

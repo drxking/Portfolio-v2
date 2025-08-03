@@ -25,7 +25,7 @@ const Home = () => {
         list={{
           Home: "#",
           Skills: "#skills",
-          Work: "#projects",
+          Projects: "#projects",
           Blogs: "/blogs",
           Contact: "#contact"
         }}

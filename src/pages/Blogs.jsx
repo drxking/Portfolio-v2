@@ -57,7 +57,7 @@ const Blogs = () => {
       ) : (
         ""
       )}
-      {error ? <p>Error:{error.message}</p> : ""}
+      {error ? <p>Error: {error.message} <br /> This may be due to Vercel free tier Bandwidth limitation</p> : ""}
       {data?.map((hell, index) => (
         <li className="list-none" key={index}>
           <BlogCard

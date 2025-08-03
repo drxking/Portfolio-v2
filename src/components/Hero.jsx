@@ -96,7 +96,7 @@ const Hero = ({ onImageLoad }) => {
   }, []);
 
   return (
-    <div className="flex flex-col  items-center lg:mt-20 mt-32 relative">
+    <div className="flex flex-col  items-center lg:mt-20 mb-10 mt-32 relative">
       <div className="swipe h-5 translate-x-[100px] w-5 opacity-0 rounded-full   bg-[--text-color] absolute  -top-20 flex justify-center items-center">
         <div className=" puchar h-full w-0 blur-[4px]  absolute left-1/2 flex items-center">
           <div
@@ -118,9 +118,9 @@ const Hero = ({ onImageLoad }) => {
         <div className="details flex justify-between items-center w-full  px-2">
           <div>
             <p className="leading-tight  font-semibold  md:text-xs text-[10px]">
-              Currently Crafing
+              Early 20's
               <br />
-              Knowledge By MySelf.
+              Computer Application
             </p>
           </div>
           <a
@@ -136,12 +136,12 @@ const Hero = ({ onImageLoad }) => {
        </div>
       </div>
       <div style={{ perspective: "700px" }}>
-        <div className="image origin-tops scale-[0.9] md:w-96 w-full max-w-80 mt-10 overflow-hidden  rounded-3xl">
+        <div  className="image  origin-tops  scale-[0.9] md:w-96  w-full  max-w-80 mt-10 overflow-hidden  rounded-3xl">
           <img
             onLoad={onImageLoad}
-            src="https://res.cloudinary.com/dgcpqppcd/image/upload/v1747062833/photo_ggf8zf.jpg"
+            src="https://res.cloudinary.com/dgcpqppcd/image/upload/v1754224351/photo_ggf8zf.jpg"
             alt="sudip acharya"
-            className=" w-full shadow-xl scale-150 origin-bottom"
+            className=" w-full h-full shadow-xl  origin-bottom object-cover"
             loading="lazy"
           />
         </div>

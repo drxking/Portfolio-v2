@@ -38,7 +38,7 @@ html::-webkit-scrollbar-button {
 }
 
 html::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.329);
+  background: rgba(0, 0, 0, 0.0529);
   border-radius: 20px;
 
 }
