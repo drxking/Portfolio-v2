@@ -38,7 +38,7 @@ const Skills = () => {
           opacity: 0,
           y: `50%`,
           duration: 0.5,
-          filter: `blur(3px)`,
+          filter: `blur(7px)`,
           scrollTrigger: {
             trigger: yy,
             start: "top bottom",
