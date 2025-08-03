@@ -27,9 +27,9 @@ const Hero = ({ onImageLoad }) => {
       gl.to(
         ".puchar",
         {
-          width: 40,
-          duration: 0.5,
-          delay: 0.4,
+          width: 50,
+          duration: 0.2,
+          delay: 0.5,
         },
         "a"
       );
@@ -55,6 +55,8 @@ const Hero = ({ onImageLoad }) => {
         ".puchar",
         {
           width: 0,
+          duration:0.3,
+          delay:-0.15
         },
         "b"
       );
@@ -98,9 +100,9 @@ const Hero = ({ onImageLoad }) => {
   return (
     <div className="flex flex-col  items-center lg:mt-20 mb-10 mt-32 relative">
       <div className="swipe h-5 translate-x-[100px] w-5 opacity-0 rounded-full   bg-[--text-color] absolute  -top-20 flex justify-center items-center">
-        <div className=" puchar h-full w-0 blur-[4px]  absolute left-1/2 flex items-center">
+        <div className=" puchar h-full w-0 blur-[1px]  absolute left-1/2 flex items-center">
           <div
-            style={{ clipPath: "polygon(0 0, 0% 100%, 100% 51%)" }}
+            style={{ clipPath: "polygon(0 20%, 0% 80%, 100% 50%)" }}
             className="cutted bg-[--text-color] h-1/2 w-full"
           ></div>
         </div>
@@ -136,7 +138,7 @@ const Hero = ({ onImageLoad }) => {
        </div>
       </div>
       <div style={{ perspective: "700px" }}>
-        <div  className="image  origin-tops  scale-[0.9] md:w-96  w-full  max-w-80 mt-10 overflow-hidden  rounded-3xl">
+        <div  className="image shadow-md  origin-tops  scale-[0.9] md:w-96  w-full  max-w-80 mt-10 overflow-hidden  rounded-3xl">
           <img
             onLoad={onImageLoad}
             src="https://res.cloudinary.com/dgcpqppcd/image/upload/v1754224351/photo_ggf8zf.jpg"
